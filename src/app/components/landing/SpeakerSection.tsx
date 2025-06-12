@@ -34,7 +34,14 @@ export default function SpeakerSection() {
               {/* Placeholder for speaker photo */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-48 h-48 bg-[#CAAB73] rounded-full flex items-center justify-center">
-                  <span className="text-6xl text-white font-bold">מ</span>
+<div
+  className="absolute inset-0 bg-cover bg-center"
+  style={{
+    backgroundImage: `
+      url('/images/plaseHolderPortret.jpg')`,
+    backgroundBlendMode: 'overlay',
+  }}
+></div>
                 </div>
               </div>
               {/* Decorative elements */}
