@@ -6,6 +6,7 @@ import { SparklesText } from '@/components/ui/sparkles-text';
 import { Calendar, Clock, MapPin, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SlidingNumber } from '@/components/ui/sliding-number';
+import LayeredBackground from '../landing/LayeredBackground';
 
 interface HeroSectionProps {
   onRegisterClick: () => void;
@@ -80,20 +81,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
 
       <section className='relative min-h-screen flex items-center justify-center overflow-hidden'>
         {/* רקע משופר עם שכבות נוספות */}
-        <div
-          className='absolute inset-0 bg-cover bg-center bg-no-repeat'
-          style={{
-            backgroundImage: `
-              url('/images/bgSmall.jpg'),
-              radial-gradient(circle at 20% 80%, rgba(164, 134, 79, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 80% 20%, rgba(202, 171, 115, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 40% 40%, rgba(245, 217, 165, 0.12) 0%, transparent 60%),
-              linear-gradient(135deg, rgba(164, 134, 79, 0.05) 0%, rgba(245, 217, 165, 0.08) 100%)
-            `,
-            backgroundBlendMode: 'overlay, normal, normal, normal, normal',
-            filter: 'blur(1.5px) brightness(1.1) contrast(1.05)',
-          }}
-        ></div>
+        <LayeredBackground />
 
         <div className='relative z-10 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 md:py-16 flex flex-col gap-12'>
           {/* כותרת עליונה משופרת */}
@@ -292,9 +280,11 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             >
               <Star className='w-10 h-10 text-white drop-shadow-md relative z-10' />
             </motion.div>
-            <span className='relative z-10 drop-shadow-lg'>
-              שמרי את מקומך עכשיו
-            </span>
+          <span className='relative z-10 drop-shadow-lg'>
+  <span className='block  sm:hidden'>שרייני מקום</span>
+  <span className='hidden sm:block'>שמרי את מקומך עכשיו</span>
+</span>
+
             <motion.div
               animate={{ rotate: isButtonHovered ? -360 : 0 }}
               transition={{ duration: 0.8 }}

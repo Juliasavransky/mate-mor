@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Timer, Clock, AlertCircle, Star } from "lucide-react";
 import { motion } from "framer-motion";
+import LayeredBackground from '../landing/LayeredBackground';
+
 
 type PricingSectionProps = {
   timeLeft: {
@@ -19,7 +21,9 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
   const isEarlyBird = timeLeft.days >= 0;
 
   return (
-    <section className="py-20 bg-[#F5E8CD]" id="pricing">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden " id="pricing">
+      {/* Background Layered Effect */}
+       <LayeredBackground /> 
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,7 +69,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                     ₪93
                   </div>
                   <div className="text-neutral-500 line-through text-xl">₪129</div>
-                  <p className="text-green-600 font-semibold text-lg">חיסכון של ₪36!</p>
+                  <p className="text-red-600 font-semibold text-lg">חיסכון של ₪36!</p>
                 </div>
 
                 {/* Countdown Timer */}
@@ -169,17 +173,6 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <Card className="bg-[#F5D9A5] border-[#CAAB73] max-w-2xl mx-auto">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-center gap-3 text-[#A4864F]">
-                <AlertCircle className="w-6 h-6" />
-                <h4 className="text-xl font-bold">רק ₪93 למרשמות עד 12 ביולי!</h4>
-              </div>
-              <p className="text-[#A4864F] mt-2">
-                אל תפספסי את ההזדמנות לחסוך ₪36 ולהבטיח את מקומך בערב המיוחד הזה
-              </p>
-            </CardContent>
-          </Card>
         </motion.div>
       </div>
     </section>

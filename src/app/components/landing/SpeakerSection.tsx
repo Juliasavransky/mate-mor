@@ -1,6 +1,4 @@
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Award, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function SpeakerSection() {
