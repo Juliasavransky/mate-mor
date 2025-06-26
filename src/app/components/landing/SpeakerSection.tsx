@@ -77,32 +77,6 @@ export default function SpeakerSection() {
               </div>
             </div>
 
-            {/* Achievement Cards */}
-            <div className="grid grid-cols-3 gap-4">
-              <Card className="border-none shadow-lg bg-[#F5D9A5]">
-                <CardContent className="p-4 text-center">
-                  <Award className="w-8 h-8 text-[#A4864F] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[#A4864F]">30+</p>
-                  <p className="text-sm text-[#A4864F]">שנות ניסיון</p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-lg bg-[#F5D9A5]">
-                <CardContent className="p-4 text-center">
-                  <Users className="w-8 h-8 text-[#A4864F] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[#A4864F]">1000+</p>
-                  <p className="text-sm text-[#A4864F]">נשים שלוו</p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-lg bg-[#F5D9A5]">
-                <CardContent className="p-4 text-center">
-                  <Star className="w-8 h-8 text-[#A4864F] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[#A4864F]">★★★★★</p>
-                  <p className="text-sm text-[#A4864F]">המלצות</p>
-                </CardContent>
-              </Card>
-            </div>
           </motion.div>
         </div>
       </div>

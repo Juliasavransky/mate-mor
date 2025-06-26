@@ -68,7 +68,7 @@ export default function EventHighlights() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <Card className="bg-[#CAAB73] border-none text-white max-w-4xl mx-auto">
+          <Card className="bg-[#CAAB73] border-none text-white max-w-6xl mx-auto">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="space-y-2">
