@@ -2,7 +2,7 @@ import { Heart, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#A4864F] to-[#F5E8CD] text-black py-12">
+    <footer className="bg-[#A4864F] text-black py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Event Info */}

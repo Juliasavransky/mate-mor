@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { SparklesText } from '@/components/ui/sparkles-text';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar, Clock, MapPin, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SlidingNumber } from '@/components/ui/sliding-number';
 
@@ -13,9 +13,9 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
-  const [experience, setExperience] = useState(6);
-  const [clients, setClients] = useState(150);
-  const [impact, setImpact] = useState(15);
+  const [experience, setExperience] = useState(0);
+  const [clients, setClients] = useState(0);
+  const [impact, setImpact] = useState(0);
 
   useEffect(() => {
     const animateToValue = (
@@ -48,16 +48,15 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
       }, 30);
     };
 
-    animateToValue(setExperience, 6, 30);
-    animateToValue(setClients, 150, 1000);
+    animateToValue(setExperience, 10, 30);
+    animateToValue(setClients, 100, 1000);
     animateToValue(setImpact, 15, 100);
   }, []);
 
   return (
-    <section className='relative min-h-screen flex items-center justify-center overflow-hidden '>
-      <div className='absolute inset-0 bg-[#F5E8CD] opacity-10'></div>
+    <section className='relative min-h-screen flex items-center justify-center overflow-hidden'>
       <div
-        className='absolute inset-0 bg-cover bg-center bg-no-repeat '
+        className='absolute inset-0 bg-cover bg-center bg-no-repeat'
         style={{
           backgroundImage: `
             url('/images/bgSmall.jpg'),
@@ -70,100 +69,123 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
         }}
       ></div>
 
-      <div className='relative z-10 max-w-6xl mx-auto px-6 text-center'>
-        <Image
-          src='/images/logo1.png'
-          alt='מזל מתי מור'
-          width={140}
-          height={140}
-          className='mx-auto m-6 rounded-full shadow-xl object-cover'
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className='space-y-8'
-        >
-          <h1 className='text-3xl md:text-5xl text-neutral-700 font-normal max-w-4xl mx-auto p-2'>
-            הרצאה מרגשת חד פעמית עם מזל מתי מור
-          </h1>
+      <div className='relative z-10 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 md:py-16 flex flex-col gap-12'>
+        <div className='flex flex-col md:flex-row items-center justify-between gap-8'>
+          <div className='relative'>
+            <Image
+              src='/images/logo1.png'
+              alt='מזל מתי מור'
+              width={120}
+              height={120}
+              className='rounded-full shadow-xl object-cover'
+            />
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+            className='text-right flex flex-col gap-4'
+          >
+            <h1 className='text-3xl md:text-4xl text-neutral-700 md:text-balance font-light max-w-4xl'>
+              הרצאה מרגשת חד פעמית עם מזל מתי מור
+            </h1>
+            <SparklesText text='מסע החיים שלי' />
+          </motion.div>
+        </div>
 
-          <SparklesText text='מסע החיים שלי' />
-
-          <div className='bg-[#CAAB73] backdrop-blur-sm rounded-2xl p-9 mt-16 shadow-xl border border-white/40 max-w-3xl mx-auto  transform hover:scale-106 hover:bg-[#A4864F] transition-all duration-500'>
-            <div className='grid md:grid-cols-3 gap-4 text-center'>
-              <div className='flex flex-col items-center space-y-2'>
-                <Calendar className='w-10 h-10 text-white' />
-                <div>
-                  <p className='font-semibold  text-white'>יום ראשון</p>
-                  <p className=' text-white'>14 בספטמבר 2025</p>
+        <div className='flex flex-col lg:flex-row justify-between w-full gap-12 items-stretch'>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className='flex-[2] space-y-8 text-center lg:text-right flex flex-col justify-center'
+          >
+            <div className='bg-[#A4864F]/80 backdrop-blur-sm rounded-2xl p-9 shadow-xl border border-white/40 transform hover:scale-106 transition-all duration-500'>
+              <div className='grid md:grid-cols-3 gap-4 text-center'>
+                <div className='flex flex-col items-center space-y-2'>
+                  <Calendar className='w-10 h-10 text-white' />
+                  <div>
+                    <p className='font-semibold text-white'>יום ראשון</p>
+                    <p className='text-white'>14 בספטמבר 2025</p>
+                  </div>
                 </div>
-              </div>
-              <div className='flex flex-col items-center space-y-2'>
-                <Clock className='w-10 h-10  text-white' />
-                <div>
-                  <p className='font-semibold  text-white'>18:00-21:00</p>
-                  <p className=' text-white'>3 שעות של השראה</p>
+                <div className='flex flex-col items-center space-y-2'>
+                  <Clock className='w-10 h-10 text-white' />
+                  <div>
+                    <p className='font-semibold text-white'>18:00-21:00</p>
+                    <p className='text-white'>3 שעות של השראה</p>
+                  </div>
                 </div>
-              </div>
-              <div className='flex flex-col items-center space-y-2'>
-                <MapPin className='w-10 h-10  text-white' />
-                <div>
-                  <p className='font-semibold  text-white'>אשכול פייס</p>
-                  <p className=' text-white'>בת ים</p>
+                <div className='flex flex-col items-center space-y-2'>
+                  <MapPin className='w-10 h-10 text-white' />
+                  <div>
+                    <p className='font-semibold text-white'>אשכול פייס</p>
+                    <p className='text-white'>בת ים</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className='max-w-4xl mx-auto'>
-            <p className='text-xl md:text-4xl text-neutral-700 leading-relaxed font-light'>
-              הצטרפי אלינו לערב מיוחד של הכרת תודה לבורא עולם,
-              <br className='hidden md:block' />
-              גילוי עצמי והשראה שתלווה אותך זמן רב
+            <p className='text-xl md:text-4xl text-neutral-700 leading-relaxed font-light text-balance'>
+              הצטרפי אלינו לערב מיוחד של הכרת תודה לבורא עולם, גילוי עצמי והשראה
+              שתלווה אותך זמן רב
             </p>
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-          >
-            <Button
-              onClick={onRegisterClick}
-              size='lg'
-              className='bg-[#CAAB73] hover:bg-[#A4864F] text-white px-12 py-8 text-3xl font-semibold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300'
-            >
-              שמרי את מקומך עכשיו
-            </Button>
+            <div className='flex justify-center lg:justify-start gap-8 pt-8 text-center'>
+              <div className='text-center'>
+                <div className='text-3xl font-bold text-[#A4864F] flex items-center justify-center'>
+                  <SlidingNumber value={experience} />
+                  <span className='ml-1'>+</span>
+                </div>
+                <p className='text-neutral-600 text-2xl'>שנות ניסיון</p>
+              </div>
+              <div className='text-center'>
+                <div className='text-3xl font-bold text-[#A4864F] flex items-center justify-center'>
+                  <SlidingNumber value={clients} />
+                  <span className='ml-1'>+</span>
+                </div>
+                <p className='text-neutral-600 text-2xl'>נשים מרוצות</p>
+              </div>
+              <div className='text-center'>
+                <div className='text-3xl font-bold text-[#A4864F] flex items-center justify-center'>
+                  <SlidingNumber value={impact} />
+                  <span className='ml-1'>%</span>
+                </div>
+                <p className='text-neutral-600 text-2xl'>השראה מובטחת</p>
+              </div>
+            </div>
           </motion.div>
 
-          <div className='flex justify-center items-center space-x-8 pt-8 mb-10'>
-            <div className='text-center'>
-              <div className='text-3xl font-bold text-[#A4864F] flex items-center justify-center'>
-                <SlidingNumber value={experience} />
-                <span className='ml-1'>+</span>
-              </div>
-              <p className='text-neutral-600'>שנות ניסיון</p>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className='flex-1 relative min-h-[400px] rounded-xl overflow-hidden'
+          >
+            <div
+              className='absolute inset-0 bg-cover bg-center'
+              style={{
+                backgroundImage: "url('/images/Image5.jpeg')",
+                backgroundBlendMode: 'overlay',
+              }}
+            ></div>
+          </motion.div>
+        </div>
 
-            <div className='text-center'>
-              <div className='text-3xl font-bold text-[#A4864F] flex items-center justify-center'>
-                <SlidingNumber value={clients} />
-                <span className='ml-1'>+</span>
-              </div>
-              <p className='text-neutral-600'>נשים מרוצות</p>
-            </div>
+ <Button
+  onClick={onRegisterClick}
+  className="relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-4 mt-12
+             rounded-full px-20 py-7 text-3xl font-semibold text-white
+             bg-gradient-to-r from-[#FFD700] via-[#FFCC70] to-[#CAAB73]
+             shadow-2xl overflow-hidden transition-all duration-500 ease-out
+             hover:scale-105 group"
+>
 
-            <div className='text-center'>
-              <div className='text-3xl font-bold text-[#A4864F] flex items-center justify-center'>
-                <SlidingNumber value={impact} />
-                <span className='ml-1'>%</span>
-              </div>
-              <p className='text-neutral-600'>השראה מובטחת</p>
-            </div>
-          </div>
-        </motion.div>
+  <Star className="w-10 h-10 text-white drop-shadow-md relative z-10" />
+  <span className="relative z-10">שמרי את מקומך עכשיו</span>
+  <Star className="w-10 h-10 text-white drop-shadow-md relative z-10" />
+</Button>
+
       </div>
     </section>
   );

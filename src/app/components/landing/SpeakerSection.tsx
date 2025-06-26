@@ -38,7 +38,7 @@ export default function SpeakerSection() {
   className="absolute inset-0 bg-cover bg-center"
   style={{
     backgroundImage: `
-      url('/images/plaseHolderPortret.jpg')`,
+      url('/images/Image3.jpeg')`,
     backgroundBlendMode: 'overlay',
   }}
 ></div>
