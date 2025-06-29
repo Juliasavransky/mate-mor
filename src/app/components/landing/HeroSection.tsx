@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState } from 'react';
@@ -60,7 +59,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
         @keyframes slidebg {
           to {
             background-position: 300% center;
-          }#aba395
+          }
         }
         @keyframes pulse-glow {
           0%,
@@ -76,7 +75,8 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
         }
       `}</style>
 
-      <div className='absolute top-4 left-4 z-50 '>
+      {/* לוגו בדסקטופ */}
+      <div className='hidden lg:block absolute top-4 left-4 z-50'>
         <Image
           src='/images/logo1.png'
           alt='מזל מתי מור'
@@ -91,11 +91,22 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
 
         <div className='relative z-10 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 md:py-16 flex flex-col gap-12'>
 
+          {/* לוגו למובייל */}
+          <div className='lg:hidden mx-auto mt-3'>
+            <Image
+              src='/images/logo1.png'
+              alt='מזל מתי מור'
+              width={140}
+              height={140}
+              className='rounded-full shadow-2xl object-cover border-2 border-white/50'
+            />
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className='flex flex-col md:flex-row items-center justify-between gap-8 mt-32 lg:mt-2'
+            className='flex flex-col md:flex-row items-center justify-between gap-8 mt-1 lg:mt-2'
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -103,9 +114,19 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
               className='text-right flex flex-col gap-4 md:mt-6'
             >
-              <SparklesText text='מופע חד פעמי - מסע חיי עם מתי מור ' />
+              <SparklesText text='מופע חד פעמי-   מסע חיי עם מתי מור ' />
             </motion.div>
           </motion.div>
+
+          {/* תמונה של מתי - רק למובייל */}
+          <div className='lg:hidden'>
+            <div className='relative min-h-[420px] rounded-2xl overflow-hidden'>
+              <div
+                className='absolute inset-0 bg-cover bg-center'
+                style={{ backgroundImage: "url('/images/Image5.jpeg')" }}
+              ></div>
+            </div>
+          </div>
 
           <div className='flex flex-col lg:flex-row justify-between w-full gap-12 items-stretch'>
             <motion.div
@@ -118,8 +139,10 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className='bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90 backdrop-blur-lg rounded-3xl p-9 shadow-2xl border border-white/50 hover:shadow-[0_20px_40px_rgba(164,134,79,0.3)] transition-all duration-500'
-              >
+  className='bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90 backdrop-blur-lg 
+             rounded-3xl pl-20 pr-20 pt-9 pb-9  shadow-2xl border border-white/50 
+             hover:shadow-[0_20px_40px_rgba(164,134,79,0.3)] transition-all duration-500 
+             max-w-[400px] lg:max-w-none mx-auto'              >
                 <div className='grid md:grid-cols-3 gap-6 text-center'>
                   {eventDetails.map(({ icon, title, subtitle }, index) => (
                     <motion.div
@@ -195,11 +218,12 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               </motion.div>
             </motion.div>
 
+            {/* תמונה של מתי במסך גדול */}
             <motion.div
               initial={{ opacity: 0, y: 60, rotateY: 15 }}
               animate={{ opacity: 1, y: 0, rotateY: 0 }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
-              className='flex-1 relative min-h-[500px] rounded-2xl overflow-hidden group'
+              className='hidden lg:block flex-1 relative min-h-[500px] rounded-2xl overflow-hidden group'
               whileHover={{ scale: 1.02 }}
             >
               <div className='absolute inset-0 bg-gradient-to from-[#664c43]/50 to-transparent z-10'></div>

@@ -11,13 +11,13 @@ export default function SpeakerSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
-            הכירי את 
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent"> מזל מתי מור</span>
+          <h2 className="text-4xl text-normalize md:text-5xl font-bold text-[#3b3b3b] mb-6 leading-16">היי,            
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent">
+   אני מתי מור 
+   </span>
+<div>נומרולוגית קבלית ומלווה להעצמה אישית</div>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            נומרולוגית קבלית מובילה, החיה בעולם המספרים מעל 30 שנה
-          </p>
+        
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -56,22 +56,24 @@ export default function SpeakerSection() {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-[#3b3b3b]">נומרולוגית קבלית מוכרת</h3>
+              <h3 className="text-4xl font-bold text-[#3b3b3b]">מי אני ?</h3>
               
               <div className="space-y-4 text-lg text-neutral-700 leading-relaxed">
                 <p>
-                  מזל מתי מור היא נומרולוגית קבלית מובילה, החיה ונושמת את עולם המספרים מעל 30 שנה. 
-                  בעלת יכולת מיוחדת לחבר בין חכמת הקבלה לחיי היומיום.
-                </p>
-                
-                <p>
-                  דרך הרצאותיה המרגשות והמעמיקות, מתי מובילה נשים במסע של גילוי עצמי, 
-                  הבנת המשמעות הפנימית של המספרים בחייהן, ויצירת חיבור עמוק יותר לבורא עולם.
-                </p>
+                נשואה ואמא ל־3 ילדים. מעל 3 עשורים בעולם המספרים ובשנים האחרונות גיליתי בהם את העומק הרוחני והעומקי ואת היכולת שלהם לשקף, לתת כלים ולהעניק הכוונה. 
+אני עורכת מפגשים אישיים תוך ניתוח ואבחון מפות נומרולוגיות, מרצה ומקיימת סדנאות ומפגשי העצמה ומסייעת 
+<strong> להגשים, לממש ולמקסם את הפוטנציאל במסע חיינו.
+</strong></p>
 
-                <p>
-                  "כל מספר מספר סיפור, וכל סיפור חושף את הייעוד הייחודי שלך" - מזל מתי מור
-                </p>
+<span className="text-[#3b3b3b]">
+  <span>"</span>
+                <span>כל מספר אישי שלנו המקיף אותנו מספר סיפור 
+וכל סיפור חושף את היעוד שלנו</span>
+                <span>"</span>
+  <div className="text-italick">
+ - מתי מור
+              </div>
+</span>
               </div>
             </div>
 
