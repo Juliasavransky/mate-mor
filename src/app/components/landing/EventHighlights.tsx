@@ -1,16 +1,15 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Gift, Heart, Camera, Utensils, Sparkles, Users, Clock, Star } from "lucide-react";
+import { Gift, Heart, Camera, Utensils, Sparkles, Users, Clock, Star,HandHeart,Wand ,Zap,Gem,BookOpenText} from "lucide-react";
 import { motion } from "framer-motion";
-
 export default function EventHighlights() {
   const highlights = [
-    { icon: Gift, title: "מתנות מיוחדות", description: "כל משתתפת תקבל מתנות מפתיעות ומשמחות" },
-    { icon: Heart, title: "חיבור רוחני", description: "ערב של הכרת תודה והתחברות עמוקה לבורא עולם" },
-    { icon: Camera, title: "חוויית צילום", description: "פינת צילום מקצועית לזכרונות בלתי נשכחים" },
+    { icon: Gift, title: "הפתעות  ", description: " ומתנות מפנקות כולל כיבוד טעים ועשיר" },
+    { icon: Gem, title: "  אווירה חמה ", description: "בעוצמה נשית ייחודית " },
+    { icon: BookOpenText, title: " סיפור חיים", description: "מעורר השראה מתוך אמונה, הודיה, מזל ותקווה 🙏" },
     { icon: Utensils, title: "אוכל עשיר ומפנק", description: "מבחר מטעמים מיוחדים ומשקאות חמים" },
-    { icon: Sparkles, title: "הפתעות מיוחדות", description: "הפתעות ופעילויות שיעשו את הערב בלתי נשכח" },
-    { icon: Users, title: "אווירה חמה ומקבלת", description: "פגישה עם נשים נפלאות ויצירת קשרים חדשים" }
+    { icon: Camera, title: " אנרגיות שמחות ", description: " וזכרונות יפים שיתעודו על ידי צלמים מקצועיים " },
+    { icon: Wand, title: " בערב זה בכל רגע יתרחש קסם ", description: "  מתחילתו ועד סיומו - אור גדול " }
   ];
 
   return (
@@ -24,7 +23,7 @@ export default function EventHighlights() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
             מה מחכה לך 
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent"> בערב הזה?</span>
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent"> בערב מיוחד זה?</span>
           </h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             ערב מלא באור, במשמעות ובהפתעות שיעשו את הלב שמח
@@ -73,12 +72,12 @@ export default function EventHighlights() {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div className="space-y-2">
                   <Clock className="w-8 h-8 mx-auto" />
-                  <h4 className="text-xl font-bold">3 שעות מלאות</h4>
+                  <h4 className="text-xl font-bold"> שלוש שעות </h4>
                   <p className="text-[#F5E8CD]">של השראה והעשרה</p>
                 </div>
                 <div className="space-y-2">
                   <Star className="w-8 h-8 mx-auto" />
-                  <h4 className="text-xl font-bold">ערב חד פעמי</h4>
+                  <h4 className="text-xl font-bold">אירוע חד פעמי</h4>
                   <p className="text-[#F5E8CD]">שלא יחזור שוב</p>
                 </div>
                 <div className="space-y-2">

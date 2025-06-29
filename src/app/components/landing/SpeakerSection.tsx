@@ -11,9 +11,9 @@ export default function SpeakerSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl text-normalize md:text-5xl font-bold text-[#3b3b3b] mb-6 leading-16">היי,            
+          <h2 className="text-4xl text-normalize md:text-5xl font-bold text-[#3b3b3b] mb-6 leading-16">היי,             
             <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent">
-   אני מתי מור 
+  <span>  אני מתי מור   </span> 
    </span>
 <div>נומרולוגית קבלית ומלווה להעצמה אישית</div>
           </h2>
@@ -56,7 +56,7 @@ export default function SpeakerSection() {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <h3 className="text-4xl font-bold text-[#3b3b3b]">מי אני ?</h3>
+              <h3 className="text-4xl font-bold text-[#3b3b3b]">?מי אני</h3>
               
               <div className="space-y-4 text-lg text-neutral-700 leading-relaxed">
                 <p>
@@ -65,12 +65,13 @@ export default function SpeakerSection() {
 <strong> להגשים, לממש ולמקסם את הפוטנציאל במסע חיינו.
 </strong></p>
 
-<span className="text-[#3b3b3b]">
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent">
+
   <span>"</span>
                 <span>כל מספר אישי שלנו המקיף אותנו מספר סיפור 
 וכל סיפור חושף את היעוד שלנו</span>
                 <span>"</span>
-  <div className="text-italick">
+  <div className="italic text-xl text-[#A4864F]">
  - מתי מור
               </div>
 </span>
