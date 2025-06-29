@@ -116,7 +116,23 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html[dir="rtl"] {
+    direction: rtl; /* עבור הטקסטים */
+  }
+
   body {
+    direction: ltr; /* שמור על סדר layout טבעי */
     @apply bg-background text-foreground;
   }
+
+  .text-rtl {
+    direction: rtl;
+    unicode-bidi: plaintext; /* מונע הפיכת מספרים ומבנה */
+  }
+
+  .text-ltr {
+    direction: ltr;
+  }
 }
+
