@@ -66,10 +66,9 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
 
                 <div className="space-y-4">
                   <div className="text-6xl font-bold text-[#CAAB73]">
-                    ₪93
+                    ₪99
                   </div>
                   <div className="text-neutral-500 line-through text-xl">₪129</div>
-                  <p className="text-red-600 font-semibold text-lg">חיסכון של ₪36!</p>
                 </div>
 
                 {/* Countdown Timer */}

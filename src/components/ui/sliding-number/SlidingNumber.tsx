@@ -1,4 +1,3 @@
-// SlidingNumber.tsx
 'use client';
 import { Digit } from './Digit';
 

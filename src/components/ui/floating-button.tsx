@@ -1,7 +1,6 @@
-// @ts-nocheck
 'use client';
 
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useRef, useState, RefObject } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOnClickOutside } from 'usehooks-ts';
 
@@ -43,10 +42,13 @@ const btn = {
 };
 
 function FloatingButton({ className, children, triggerContent }: FloatingButtonProps) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  useOnClickOutside(ref, () => setIsOpen(false));
+  useOnClickOutside(ref as RefObject<HTMLDivElement>, () => setIsOpen(false));
+
+
+
 
   return (
     <div className="flex flex-col items-center relative">
