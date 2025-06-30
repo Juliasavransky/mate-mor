@@ -149,8 +149,8 @@ export default function RegistrationForm() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent">
-              שמרי את מקומך
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent leading-16">
+אני מזמינה אותך לערב חוויתי עוצמתי מלא באורות.
             </span>
           </h2>
           <p className="text-xl text-neutral-600">

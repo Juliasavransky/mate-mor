@@ -25,22 +25,26 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
       {/* Background Layered Effect */}
        <LayeredBackground /> 
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
-            השקעה קטנה,
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent"> השפעה גדולה</span>
-          </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            ערב שישנה את נקודת המבט שלך על החיים במחיר מיוחד למרשמות מוקדם
-          </p>
-        </motion.div>
+    <motion.div
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 1 }}
+  transition={{ duration: 1.2 }}
+  viewport={{ once: true }}
+  className="text-center mb-16"
+>
+  <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
+    השקעה קטנה,
+    <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent">
+      {' '}
+      השפעה גדולה
+    </span>
+  </h2>
+  <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+    ערב שישנה את נקודת המבט שלך על החיים במחיר מיוחד למרשמות מוקדם
+  </p>
+</motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 lg:[direction:rtl] gap-8 max-w-4xl mx-auto">
           {/* Early Bird Pricing */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -58,16 +62,18 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
 
               <CardContent className="p-8 pt-16 text-center space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-[#3b3b3b]">מחיר מוקדם</h3>
+                  <h3 className="text-2xl font-bold text-[#3b3b3b]"> עלות בהרשמה מוקדמת</h3>
                   <Badge className="bg-[#F5D9A5] text-[#664c43] border-none">
-                    עד 12 ביולי 2025
+                    עד 21 ביולי 2025
                   </Badge>
                 </div>
 
                 <div className="space-y-4">
                   <div className="text-6xl font-bold text-[#CAAB73]">
-                    ₪99
-                  </div>
+                     ₪99 
+                     </div>
+                     <span className="text-6xl font-bold text-[#CAAB73]">בלבד  </span>
+              
                   <div className="text-neutral-500 line-through text-xl">₪129</div>
                 </div>
 
@@ -103,8 +109,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                   onClick={onRegisterClick}
                   className="w-full bg-[#CAAB73] hover:bg-[#664c43] text-white py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
                 >
-                  רישום מהיר במחיר מוקדם
-                </Button>
+מספר המקומות מוגבל – הזמיני עכשיו!                </Button>
 
                 <div className="text-sm text-neutral-500 space-y-1">
                   <p>✓ כל מה שכלול בערב</p>
@@ -127,7 +132,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-neutral-800">מחיר רגיל</h3>
                   <Badge variant="outline" className="border-[#664c43] text-neutral-600">
-                    מ-13 ביולי 2025
+                    מ-22 ביולי 2025
                   </Badge>
                 </div>
 
