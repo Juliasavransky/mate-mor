@@ -11,7 +11,7 @@ export default function SocialSection() {
       icon: Instagram,
       handle: "@mazal_mati_mor",
       description: "עקבי אחרי להשראה יומיומית ותובנות נומרולוגיות",
-      color: "#A4864F",
+      color: "#664c43",
       url: "#"
     },
     {
@@ -19,7 +19,7 @@ export default function SocialSection() {
       icon: Facebook,
       handle: "מזל מתי מור - נומרולוגיה קבלית",
       description: "הצטרפי לקהילה של נשים מעוררות השראה",
-      color: "#A4864F",
+      color: "#664c43",
       url: "#"
     },
     {
@@ -27,7 +27,7 @@ export default function SocialSection() {
       icon: MessageCircle,
       handle: "052-1234567",
       description: "צרי קשר ישיר לשאלות ויעוץ אישי",
-      color: "#A4864F",
+      color: "#664c43",
       url: "#"
     }
   ];
@@ -43,7 +43,7 @@ export default function SocialSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
             בואי נישאר 
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent"> בקשר</span>
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent"> בקשר</span>
           </h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             הצטרפי לקהילה שלנו לתכנים מעוררי השראה ועדכונים על אירועים עתידיים
@@ -104,14 +104,14 @@ export default function SocialSection() {
           <Card className="bg-[#F5D9A5] border-none max-w-2xl mx-auto">
             <CardContent className="p-8">
               <div className="space-y-4">
-                <Share2 className="w-8 h-8 text-[#A4864F] mx-auto" />
+                <Share2 className="w-8 h-8 text-[#664c43] mx-auto" />
                 <h3 className="text-2xl font-bold text-[#3b3b3b]">ספרי לחברות שלך!</h3>
                 <p className="text-neutral-600">
                   ערב כזה מיוחד צריך להיחלק עם האנשים שאוהבים אותך
                 </p>
                 <Button
                   variant="outline"
-                  className="border-[#A4864F] text-[#A4864F] hover:bg-[#F5E8CD]"
+                  className="border-[#664c43] text-[#664c43] hover:bg-[#F5E8CD]"
                   onClick={() => {
                     if (navigator.share) {
                       navigator.share({

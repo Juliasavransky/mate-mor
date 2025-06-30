@@ -157,7 +157,7 @@ export default function TestimonialsCarousel() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-4">
             מה אומרות הנשים
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent"> על מתי?</span>
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent"> על מתי?</span>
           </h2>
           <p className="text-lg md:text-xl text-neutral-700">
             עשרות נשים כבר חוו את הכוח המשנה חיים של הערבים של מתי
@@ -166,10 +166,10 @@ export default function TestimonialsCarousel() {
 
         <div className="relative">
           <div className="flex justify-center gap-4 mb-6">
-            <button onClick={goPrev} disabled={!canGoPrev} className="p-2 rounded-full bg-white text-[#A4864F] shadow-md hover:shadow-lg disabled:opacity-40">
+            <button onClick={goPrev} disabled={!canGoPrev} className="p-2 rounded-full bg-white text-[#664c43] shadow-md hover:shadow-lg disabled:opacity-40">
               <ChevronRight className="rotate-180" />
             </button>
-            <button onClick={goNext} disabled={!canGoNext} className="p-2 rounded-full bg-white text-[#A4864F] shadow-md hover:shadow-lg disabled:opacity-40">
+            <button onClick={goNext} disabled={!canGoNext} className="p-2 rounded-full bg-white text-[#664c43] shadow-md hover:shadow-lg disabled:opacity-40">
               <ChevronRight />
             </button>
           </div>
@@ -202,7 +202,7 @@ export default function TestimonialsCarousel() {
                   </p>
 
                   <div className="bg-[#F5D9A5] rounded-full px-4 py-1 w-fit">
-                    <span className="text-[#A4864F] font-medium text-sm">{testimonial.highlight}</span>
+                    <span className="text-[#664c43] font-medium text-sm">{testimonial.highlight}</span>
                   </div>
 
                   <div className="flex items-center gap-4 pt-4 border-t border-[#F5E8CD]">

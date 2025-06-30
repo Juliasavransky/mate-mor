@@ -105,7 +105,7 @@ export default function RegistrationForm() {
           >
             <Card className="border-none shadow-2xl bg-[#F5E8CD]">
               <CardContent className="p-12 text-center space-y-6">
-                <div className="w-20 h-20 bg-[#A4864F] rounded-full flex items-center justify-center mx-auto">
+                <div className="w-20 h-20 bg-[#664c43] rounded-full flex items-center justify-center mx-auto">
                   <CheckCircle className="w-10 h-10 text-white" />
                 </div>
                 
@@ -124,8 +124,8 @@ export default function RegistrationForm() {
                 </div>
 
                 <div className="bg-[#F5D9A5] rounded-xl p-6">
-                  <h3 className="font-bold text-[#A4864F] mb-2">מה הלאה?</h3>
-                  <ul className="text-sm text-[#A4864F] space-y-1 text-right">
+                  <h3 className="font-bold text-[#664c43] mb-2">מה הלאה?</h3>
+                  <ul className="text-sm text-[#664c43] space-y-1 text-right">
                     <li>• תקבלי אישור במייל עם כל הפרטים</li>
                     <li>• הודעת תזכורת תישלח שבוע לפני האירוע</li>
                     <li>• לשאלות: 052-1234567</li>
@@ -149,7 +149,7 @@ export default function RegistrationForm() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent">
               שמרי את מקומך
             </span>
           </h2>
@@ -242,14 +242,14 @@ export default function RegistrationForm() {
                     <div className="flex items-center space-x-2 border-2 border-[#F5D9A5] rounded-xl p-4 hover:border-[#CAAB73] transition-colors">
                       <RadioGroupItem value="bit" id="bit" />
                       <Label htmlFor="bit" className="flex items-center gap-2 cursor-pointer flex-1">
-                        <Smartphone className="w-5 h-5 text-[#A4864F]" />
+                        <Smartphone className="w-5 h-5 text-[#664c43]" />
                         <span>Bit</span>
                       </Label>
                     </div>
                     <div className="flex items-center space-x-2 border-2 border-[#F5D9A5] rounded-xl p-4 hover:border-[#CAAB73] transition-colors">
                       <RadioGroupItem value="paybox" id="paybox" />
                       <Label htmlFor="paybox" className="flex items-center gap-2 cursor-pointer flex-1">
-                        <CreditCard className="w-5 h-5 text-[#A4864F]" />
+                        <CreditCard className="w-5 h-5 text-[#664c43]" />
                         <span>Paybox</span>
                       </Label>
                     </div>
@@ -260,7 +260,7 @@ export default function RegistrationForm() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#A4864F] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
+                  className="w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">

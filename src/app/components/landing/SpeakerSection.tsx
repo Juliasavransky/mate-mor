@@ -13,7 +13,7 @@ export default function SpeakerSection() {
         >
           <h2 className='text-4xl text-normalize md:text-5xl font-bold text-[#3b3b3b] mb-6 leading-16'>
             היי,
-            <span className='bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
               <span> אני מתי מור </span>
             </span>
             <div>נומרולוגית קבלית ומלווה להעצמה אישית</div>
@@ -44,7 +44,7 @@ export default function SpeakerSection() {
               </div>
               {/* Decorative elements */}
               <div className='absolute top-4 right-4 w-12 h-12 bg-[#CAAB73] rounded-full opacity-20'></div>
-              <div className='absolute bottom-8 left-8 w-8 h-8 bg-[#A4864F] rounded-full opacity-30'></div>
+              <div className='absolute bottom-8 left-8 w-8 h-8 bg-[#664c43] rounded-full opacity-30'></div>
             </div>
           </motion.div>
 
@@ -72,14 +72,14 @@ export default function SpeakerSection() {
                   התגברות, התמודדות, אמונה והודי'ה בשילוב הנומרולוגיה.
                 </p>
 
-                <span className='bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent'>
+                <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
                   <span>"</span>
                   <span>
                     כל מספר אישי שלנו המקיף אותנו מספר סיפור וכל סיפור חושף את
                     היעוד שלנו
                   </span>
                   <span>"</span>
-                  <div className='italic text-xl text-[#A4864F]'>- מתי מור</div>
+                  <div className='italic text-xl text-[#664c43]'>- מתי מור</div>
                 </span>
               </div>
             </div>

@@ -33,7 +33,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
             השקעה קטנה,
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#A4864F] bg-clip-text text-transparent"> השפעה גדולה</span>
+            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent"> השפעה גדולה</span>
           </h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             ערב שישנה את נקודת המבט שלך על החיים במחיר מיוחד למרשמות מוקדם
@@ -49,7 +49,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
           >
             <Card className="border-4 border-[#CAAB73] shadow-2xl relative overflow-hidden bg-white">
               {/* Popular Badge */}
-              <div className="absolute top-0 right-0 bg-[#A4864F] text-white px-6 py-2 rounded-bl-2xl">
+              <div className="absolute top-0 right-0 bg-[#664c43] text-white px-6 py-2 rounded-bl-2xl">
                 <span className="flex items-center gap-2 font-bold">
                   <Star className="w-4 h-4" />
                   הכי פופולרי
@@ -59,7 +59,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
               <CardContent className="p-8 pt-16 text-center space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-[#3b3b3b]">מחיר מוקדם</h3>
-                  <Badge className="bg-[#F5D9A5] text-[#A4864F] border-none">
+                  <Badge className="bg-[#F5D9A5] text-[#664c43] border-none">
                     עד 12 ביולי 2025
                   </Badge>
                 </div>
@@ -75,24 +75,24 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                 {isEarlyBird && timeLeft.days !== undefined && (
                   <div className="bg-[#F5E8CD] rounded-xl p-4">
                     <div className="flex items-center justify-center gap-2 mb-3">
-                      <Timer className="w-5 h-5 text-[#A4864F]" />
-                      <span className="font-bold text-[#A4864F]">נותר זמן:</span>
+                      <Timer className="w-5 h-5 text-[#664c43]" />
+                      <span className="font-bold text-[#664c43]">נותר זמן:</span>
                     </div>
                     <div className="grid grid-cols-4 gap-2 text-center">
                       <div className="bg-[#F5D9A5] rounded-lg p-2">
-                        <div className="text-2xl font-bold text-[#A4864F]">{timeLeft.days}</div>
+                        <div className="text-2xl font-bold text-[#664c43]">{timeLeft.days}</div>
                         <div className="text-xs text-neutral-600">ימים</div>
                       </div>
                       <div className="bg-[#F5D9A5] rounded-lg p-2">
-                        <div className="text-2xl font-bold text-[#A4864F]">{timeLeft.hours}</div>
+                        <div className="text-2xl font-bold text-[#664c43]">{timeLeft.hours}</div>
                         <div className="text-xs text-neutral-600">שעות</div>
                       </div>
                       <div className="bg-[#F5D9A5] rounded-lg p-2">
-                        <div className="text-2xl font-bold text-[#A4864F]">{timeLeft.minutes}</div>
+                        <div className="text-2xl font-bold text-[#664c43]">{timeLeft.minutes}</div>
                         <div className="text-xs text-neutral-600">דקות</div>
                       </div>
                       <div className="bg-[#F5D9A5] rounded-lg p-2">
-                        <div className="text-2xl font-bold text-[#A4864F]">{timeLeft.seconds}</div>
+                        <div className="text-2xl font-bold text-[#664c43]">{timeLeft.seconds}</div>
                         <div className="text-xs text-neutral-600">שניות</div>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
 
                 <Button
                   onClick={onRegisterClick}
-                  className="w-full bg-[#CAAB73] hover:bg-[#A4864F] text-white py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
+                  className="w-full bg-[#CAAB73] hover:bg-[#664c43] text-white py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
                 >
                   רישום מהיר במחיר מוקדם
                 </Button>
@@ -126,7 +126,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
               <CardContent className="p-8 text-center space-y-6 h-full flex flex-col justify-center">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-neutral-800">מחיר רגיל</h3>
-                  <Badge variant="outline" className="border-[#A4864F] text-neutral-600">
+                  <Badge variant="outline" className="border-[#664c43] text-neutral-600">
                     מ-13 ביולי 2025
                   </Badge>
                 </div>
