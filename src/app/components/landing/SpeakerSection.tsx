@@ -55,8 +55,8 @@ export default function SpeakerSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className='space-y-8'
           >
-            <div className='space-y-6'>
-              <h3 className='text-4xl font-bold text-[#3b3b3b]'>?מי אני</h3>
+            <div dir="rtl" className='space-y-6'>
+              <h3 className='text-4xl font-bold text-[#3b3b3b]'>מי אני? </h3>
 
               <div className='space-y-4 text-lg text-neutral-700 leading-relaxed'>
                 <p>
@@ -79,7 +79,7 @@ export default function SpeakerSection() {
                     היעוד שלנו
                   </span>
                   <span>"</span>
-                  <div className='italic text-xl text-[#664c43]'>- מתי מור</div>
+                  <div dir="ltr" className='italic text-xl text-[#664c43]'>- מתי מור</div>
                 </span>
               </div>
             </div>
