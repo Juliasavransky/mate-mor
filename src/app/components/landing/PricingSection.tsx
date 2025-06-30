@@ -32,9 +32,9 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
   viewport={{ once: true }}
   className="text-center mb-16"
 >
-  <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
+  <h2 className="text-4xl md:text-5xl text-normalize font-bold text-[#3b3b3b] mb-6 mt-12">
     השקעה קטנה,
-    <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent">
+    <span className="text-normalize bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent">
       {' '}
       השפעה גדולה
     </span>
@@ -53,9 +53,9 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
           >
             <Card className="border-4 border-[#CAAB73] shadow-2xl relative overflow-hidden bg-white">
               {/* Popular Badge */}
-              <div className="absolute top-0 right-0 bg-[#664c43] text-white px-6 py-2 rounded-bl-2xl">
+              <div className="absolute top-0 right-0 bg-[#664c43] text-white px-8 py-4 rounded-bl-2xl">
                 <span className="flex items-center gap-2 font-bold">
-                  <Star className="w-4 h-4" />
+                  <Star className="w-5 h-5" />
                   הכי פופולרי
                 </span>
               </div>
@@ -63,7 +63,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
               <CardContent className="p-8 pt-16 text-center space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-[#3b3b3b]"> עלות בהרשמה מוקדמת</h3>
-                  <Badge className="bg-[#F5D9A5] text-[#664c43] border-none">
+                  <Badge className="bg-[#F5D9A5] text-[#664c43] border-none py-2">
                     עד 21 ביולי 2025
                   </Badge>
                 </div>
@@ -77,11 +77,10 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                   <div className="text-neutral-500 line-through text-xl">₪129</div>
                 </div>
 
-                {/* Countdown Timer */}
-                {isEarlyBird && timeLeft.days !== undefined && (
-                  <div className="bg-[#F5E8CD] rounded-xl p-4">
+              {isEarlyBird && timeLeft.days !== undefined && (
+                  <div className="bg-[#F5E8CD] rounded-xl p-4 rtl">
                     <div className="flex items-center justify-center gap-2 mb-3">
-                      <Timer className="w-5 h-5 text-[#664c43]" />
+                      <Timer className="w-6 h-6 text-[#664c43]" />
                       <span className="font-bold text-[#664c43]">נותר זמן:</span>
                     </div>
                     <div className="grid grid-cols-4 gap-2 text-center">
@@ -107,7 +106,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
 
                 <Button
                   onClick={onRegisterClick}
-                  className="w-full bg-[#CAAB73] hover:bg-[#664c43] text-white py-4 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
+                  className="w-full  bg-[#CAAB73] hover:bg-[#664c43] text-white py-8 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
                 >
 מספר המקומות מוגבל – הזמיני עכשיו!                </Button>
 
@@ -141,22 +140,14 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                   <p className="text-neutral-500">מחיר מלא</p>
                 </div>
 
-                <div className="bg-yellow-100/50 border border-yellow-200 rounded-xl p-4">
-                  <div className="flex items-center justify-center gap-2 text-yellow-700">
-                    <AlertCircle className="w-5 h-5" />
-                    <span className="font-semibold">אל תפספסי!</span>
-                  </div>
-                  <p className="text-yellow-600 text-sm mt-1">
-                    חסכי ₪36 עם הרישום המוקדם
-                  </p>
-                </div>
+     
 
                 <Button
                   variant="outline"
                   className="w-full border-neutral-300 text-neutral-700 py-4 text-lg rounded-xl hover:bg-neutral-50"
                   disabled
                 >
-                  יהיה זמין בקרוב
+                  יהיה זמין אחרי ה- 21 ביולי 2025
                 </Button>
 
                 <div className="text-sm text-neutral-400 space-y-1">

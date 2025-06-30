@@ -15,3 +15,25 @@ module.exports = {
   },
   plugins: [require('tailwindcss-rtl')],
 }
+// tailwind.config.js
+import typography from '@tailwindcss/typography';
+
+/** @type {import('tailwindcss').Config} */
+const config = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {
+      // הרחבות אישיות כאן
+    },
+  },
+  plugins: [
+    typography,
+    // פלאגינים נוספים אם יש
+  ],
+};
+
+export default config;
