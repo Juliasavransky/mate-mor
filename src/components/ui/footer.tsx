@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 
-interface FooterProps {
+interface UiFooterProps {
   logo: React.ReactNode
   brandName: string
   socialLinks: Array<{
@@ -22,18 +22,18 @@ interface FooterProps {
   }
 }
 
-export function Footer({
+export function UiFooter({
   logo,
   brandName,
   socialLinks,
   mainLinks,
   legalLinks,
   copyright,
-}: FooterProps) {
+}: UiFooterProps) {
   return (
-    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
+    <footer className="pb-6 pt-2 lg:pb-8 lg:pt-10">
       <div className="px-4 lg:px-8">
-        <div className="md:flex md:items-start md:justify-between">
+        <div className="md:flex md:items-center md:justify-between">
           <a
             href="/"
             className="flex items-center gap-x-2"
@@ -42,13 +42,13 @@ export function Footer({
             {logo}
             <span className="font-bold text-xl">{brandName}</span>
           </a>
-          <ul className="flex list-none mt-6 md:mt-0 space-x-3">
+          <ul className="flex justify-center  list-none mt-2 md:mt-0 space-x-4">
             {socialLinks.map((link, i) => (
               <li key={i}>
                 <Button
                   variant="secondary"
                   size="icon"
-                  className="h-10 w-10 rounded-full"
+                  className="h-14 w-14 rounded-full bg-[#f5e8cd]  hover:bg-[#caab73] transition-colors duration-300"
                   asChild
                 >
                   <a href={link.href} target="_blank" aria-label={link.label}>
@@ -59,14 +59,14 @@ export function Footer({
             ))}
           </ul>
         </div>
-        <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
+        <div className="border-t mt-6 pt-6 lg:pl-10 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
           <nav className="lg:mt-0 lg:col-[4/11]">
             <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
               {mainLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-2 shrink-0">
                   <a
                     href={link.href}
-                    className="text-sm text-primary underline-offset-4 hover:underline"
+                    className="text-base text-white underline-offset-4 hover:underline"
                   >
                     {link.label}
                   </a>
@@ -80,7 +80,7 @@ export function Footer({
                 <li key={i} className="my-1 mx-3 shrink-0">
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+                    className="text-base text-white  underline-offset-4 hover:underline"
                   >
                     {link.label}
                   </a>
@@ -88,7 +88,7 @@ export function Footer({
               ))}
             </ul>
           </div>
-          <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
+          <div className="mt-6 pr-22 text-base leading-6 text-white whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
             <div>{copyright.text}</div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>
