@@ -1,97 +1,136 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Instagram, Facebook, MessageCircle, Share2 } from "lucide-react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Share2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import WheatAppWhite from '../../../../public/images/whatsappWhite.svg';
+import instagram from '../../../../public/instagram.svg';
+import facebook from '../../../../public/facebook.svg';
+
+import Image from 'next/image';
 
 export default function SocialSection() {
   const socialLinks = [
     {
-      name: "Instagram",
-      icon: Instagram,
-      handle: "@mazal_mati_mor",
-      description: "עקבי אחרי להשראה יומיומית ותובנות נומרולוגיות",
-      color: "#664c43",
-      url: "#"
+      image: facebook,
+      alt: 'Facebook',
+      name: 'Facebook',
+      handle: 'www.facebook.com/mate.mor',
+      description: 'קשר בחיבור ישירות אליי',
+      color: '#1877F2',
+      url: 'https://www.facebook.com/mzmor?locale=he_IL',
+      width: 46,
+      height: 46,
     },
     {
-      name: "Facebook",
-      icon: Facebook,
-      handle: "מזל מתי מור - נומרולוגיה קבלית",
-      description: "הצטרפי לקהילה של נשים מעוררות השראה",
-      color: "#664c43",
-      url: "#"
+      image: instagram,
+      alt: 'Instagram',
+      name: 'Instagram',
+      handle: '@mate.mor',
+      description: 'קשר בחיבור ישירות אליי',
+      gradient: 'linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);',
+      url: 'https://www.instagram.com/matimor40/',
+      width: 48,
+      height: 48,
     },
     {
-      name: "WhatsApp",
-      icon: MessageCircle,
-      handle: "052-1234567",
-      description: "צרי קשר ישיר לשאלות ויעוץ אישי",
-      color: "#664c43",
-      url: "#"
-    }
+      image: WheatAppWhite,
+      alt: 'WhatsApp',
+      name: 'WhatsApp',
+      handle: '054-4591175',
+      description: 'קשר בחיבור ישירות אליי',
+      color: '#26d366',
+      url: 'https://wa.me/972544591175',
+      width: 40,
+      height: 44,
+    },
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className='py-20 bg-white'>
+      <div className='max-w-6xl mx-auto px-6'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className='text-center mb-16'
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6">
-            בואי נישאר 
-            <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent"> בקשר</span>
+          <h2 className='text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6'>
+            בואי נישאר
+            <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
+              {' '}
+              בקשר
+            </span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className='text-xl text-neutral-600 max-w-3xl mx-auto'>
             הצטרפי לקהילה שלנו לתכנים מעוררי השראה ועדכונים על אירועים עתידיים
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {socialLinks.map((social, index) => {
-            const IconComponent = social.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+        <div className='grid md:grid-cols-3 gap-8 mb-12'>
+          {socialLinks.map((social, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+            >
+              <div
+                onClick={() => window.open(social.url, '_blank')}
+                className='cursor-pointer'
+                role='button'
+                tabIndex={0}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') window.open(social.url, '_blank');
+                }}
               >
-                <Card className="border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-[#F5E8CD]/40 h-full">
-                  <CardContent className="p-8 text-center space-y-6">
-                    <div className="w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: social.color }}>
-                      <IconComponent className="w-8 h-8 text-white" />
+                <Card className='border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-[#F5E8CD]/40 h-full'>
+                  <CardContent className='p-8 text-center space-y-6'>
+                    <div
+                      className='w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4'
+                      style={{
+                        background: social.gradient || social.color,
+                      }}
+                    >
+                      <Image
+                        src={social.image}
+                        alt={social.alt}
+                        width={social.width}
+                        height={social.height}
+                        style={{ objectFit: 'contain' }}
+                      />
                     </div>
-                    
-                    <div className="space-y-3">
-                      <h3 className="text-xl font-bold text-[#3b3b3b]">
+
+                    <div className='space-y-3'>
+                      <h3 className='text-xl font-bold text-[#3b3b3b]'>
                         {social.name}
                       </h3>
-                      
-                      <p className="text-neutral-700 font-medium">
+
+                      <p className='text-neutral-700 font-medium'>
                         {social.handle}
                       </p>
-                      
-                      <p className="text-neutral-600 leading-relaxed text-sm">
+
+                      <p className='text-neutral-600 leading-relaxed text-sm'>
                         {social.description}
                       </p>
                     </div>
 
                     <Button
-                      className="w-full text-white font-semibold py-3 rounded-xl transition-all duration-300"
-                      style={{ backgroundColor: social.color }}
+                      className='w-full text-white font-semibold py-3 rounded-xl transition-all duration-300'
+                      style={{
+                        background: social.gradient
+                          ? social.gradient
+                          : social.color,
+                      }}
                       onClick={() => window.open(social.url, '_blank')}
                     >
                       עקבי עכשיו
                     </Button>
                   </CardContent>
                 </Card>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* Share Section */}
@@ -99,25 +138,27 @@ export default function SocialSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center"
+          className='text-center'
         >
-          <Card className="bg-[#F5D9A5] border-none max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <div className="space-y-4">
-                <Share2 className="w-8 h-8 text-[#664c43] mx-auto" />
-                <h3 className="text-2xl font-bold text-[#3b3b3b]">ספרי לחברות שלך!</h3>
-                <p className="text-neutral-600">
-                  ערב כזה מיוחד צריך להיחלק עם האנשים שאוהבים אותך
-                </p>
+          <Card className='bg-[#F5D9A5] border-none max-w-6xl mx-auto'>
+            <CardContent className='p-2'>
+              <div className='space-y-2'>
+                <Share2 className='w-8 h-8 text-[#664c43] mx-auto' />
+                <h3 dir="rtl" className='text-2xl font-bold text-[#3b3b3b]'>
+                  מוזמנת לשתף!
+                </h3>
+                <p dir="rtl"className='text-neutral-600 '>
+מופע עוצמתי חד פעמי
+עם מי בא לך לבוא?                </p>
                 <Button
-                  variant="outline"
-                  className="border-[#664c43] text-[#664c43] hover:bg-[#F5E8CD]"
+                  variant='outline'
+                  className='border-[#664c43] text-[#664c43]  hover:bg-[#664c43] hover:text-white'
                   onClick={() => {
                     if (navigator.share) {
                       navigator.share({
                         title: 'מסע החיים שלי - ערב מיוחד עם מזל מתי מור',
                         text: 'הצטרפי אליי לערב מרגש של גילוי עצמי והשראה!',
-                        url: window.location.href
+                        url: window.location.href,
                       });
                     } else {
                       navigator.clipboard.writeText(window.location.href);
