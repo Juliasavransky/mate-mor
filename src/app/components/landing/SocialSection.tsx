@@ -56,10 +56,8 @@ export default function SocialSection() {
           className='text-center mb-16'
         >
           <h2 className='text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6'>
-            בואי נישאר
             <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
-              {' '}
-              בקשר
+              בואי נישאר בקשר
             </span>
           </h2>
           <p className='text-xl text-neutral-600 max-w-3xl mx-auto'>

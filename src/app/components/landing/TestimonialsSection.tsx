@@ -2,6 +2,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import LayeredBackground from '../landing/LayeredBackground';
+
 
 const testimonials = [
   {
@@ -212,14 +214,16 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <div className="px-4 py-12 bg-[#F5E8CD] overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <>
+    <div className="px-4 py-12  bg-[#F5E8CD] relative overflow-hidden">
+        <LayeredBackground />
+      <div className="max-w-6xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
-        >
+          >
           <h2 className="text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-4">
             <span className="bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent"> משוב ופירגון מלב אל לב   
 </span>
@@ -251,7 +255,7 @@ export default function TestimonialsCarousel() {
                 initial={{ opacity: 0.5, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
-              >
+                >
                 <div className="bg-white rounded-xl shadow-lg p-6 space-y-4 h-full">
                   <div className="flex justify-between items-start">
                     <Quote className="w-8 h-8 text-[#F5D9A5]" />
@@ -286,5 +290,7 @@ export default function TestimonialsCarousel() {
         </div>
       </div>
     </div>
+                      
+                      </>
   );
 }

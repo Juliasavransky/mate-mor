@@ -144,12 +144,13 @@ export default function LandingPage() {
 
       {/* Registration Form */}
       <RegistrationForm />
+      
+      {/* Social Media */}
+      <SocialSection />
 
       {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* Social Media */}
-      <SocialSection />
 
       {/* Footer */}
       <Footer />
