@@ -4,14 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import {
-  CreditCard,
-  Smartphone,
-  CheckCircle,
-  AlertCircle,
-  Sparkles,
-} from 'lucide-react';
+import { AlertCircle, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function RegistrationForm() {
@@ -19,7 +12,6 @@ export default function RegistrationForm() {
     name: '',
     phone: '',
     email: '',
-    paymentMethod: 'bit',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -65,18 +57,37 @@ export default function RegistrationForm() {
     email?: string;
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  interface HandleSubmitEvent extends React.FormEvent<HTMLFormElement> {}
+
+  interface SendEmailResponse {
+    ok: boolean;
+    status: number;
+    statusText: string;
+  }
+
+  const handleSubmit = async (e: HandleSubmitEvent): Promise<void> => {
     e.preventDefault();
-
     if (!validateForm()) return;
-
     setIsSubmitting(true);
 
-    // Simulate payment processing
-    setTimeout(() => {
-      setSubmitted(true);
+    try {
+      const response: SendEmailResponse = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Failed to send email');
+
+      await new Promise((r: (value: unknown) => void) => setTimeout(r, 1500)); // Hold before redirect
+      window.location.href =
+        'https://secure.cardcom.solutions/EA/EA5/qiYKgUWmWEuNsbwy4Zo4jw/PaymentSP';
+    } catch (error) {
+      console.error(error);
+      alert('אירעה שגיאה בשליחת הטופס');
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   type ErrorField = keyof RegistrationFormErrors;
@@ -99,55 +110,9 @@ export default function RegistrationForm() {
     }
   };
 
-  if (submitted) {
-    return (
-      <section className='py-20 bg-white' id='registration'>
-        <div className='max-w-2xl mx-auto px-6'>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Card className='border-none shadow-2xl bg-[#F5E8CD]'>
-              <CardContent className='p-12 text-center space-y-6'>
-                <div className='w-20 h-20 bg-[#664c43] rounded-full flex items-center justify-center mx-auto'>
-                  <CheckCircle className='w-10 h-10 text-white' />
-                </div>
-
-                <h2 className='text-3xl font-bold text-[#3b3b3b]'>
-                  הרישום הושלם בהצלחה!
-                </h2>
-
-                <div className='space-y-4 text-neutral-600'>
-                  <p className='text-lg'>
-                    תודה לך {formData.name} על ההרשמה לערב המיוחד "מסע החיים
-                    שלי"
-                  </p>
-                  <p>פרטי האירוע נשלחו אליך במייל: {formData.email}</p>
-                  <p>
-                    נתראה ביום ראשון, 14 בספטמבר 2025, באשכול פייס בת ים בשעה
-                    18:00
-                  </p>
-                </div>
-
-                <div className='bg-[#F5D9A5] rounded-xl p-6'>
-                  <h3 className='font-bold text-[#664c43] mb-2'>מה הלאה?</h3>
-                  <ul className='text-sm text-[#664c43] space-y-1 text-right'>
-                    <li>• תקבלי אישור במייל עם כל הפרטים</li>
-                    <li>• הודעת תזכורת תישלח שבוע לפני האירוע</li>
-                    <li>• לשאלות: 052-1234567</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-    );
-  }
 
   return (
-    <section dir="rtl" className='py-20 bg-white' id='registration'>
+    <section dir='rtl' className='py-20 bg-white' id='registration'>
       <div className='max-w-3xl mx-auto px-6'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -157,11 +122,10 @@ export default function RegistrationForm() {
         >
           <h2 className='text-2xl md:text-3xl font-bold text-[#3b3b3b] mb-6'>
             <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent leading-16'>
-              לא סתם הגעת עד לכאן - הגיע הזמן לבחור בך  
-
+              לא סתם הגעת עד לכאן - הגיע הזמן לבחור בך
               <div className='text-[#664c43]'>"כשמספרי החיים פגשו את הלב-</div>
               <div className='text-[#664c43]'>נולד מופע שהוא מתנה לעצמך"</div>
-              מחכה ומצפה לראותך ולתת לך חיבוק אישי חם ואוהב 
+              מחכה ומצפה לראותך ולתת לך חיבוק אישי חם ואוהב
             </span>
           </h2>
         </motion.div>
@@ -171,7 +135,10 @@ export default function RegistrationForm() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Card dir="rtl" className='border-none shadow-2xl bg-[#F5E8CD]/60 backdrop-blur-sm'>
+          <Card
+            dir='rtl'
+            className='border-none shadow-2xl bg-[#F5E8CD]/60 backdrop-blur-sm'
+          >
             <CardHeader className='text-center pb-6'>
               <div className='flex items-center justify-center gap-3 mb-4'>
                 <Badge className='bg-[#CAAB73] text-white px-4 py-2'>
@@ -186,132 +153,111 @@ export default function RegistrationForm() {
               </CardTitle>
             </CardHeader>
 
-            <CardContent 
-            className='space-y-6'>
-<form onSubmit={handleSubmit} dir="rtl" className="space-y-6 text-right">
-  {/* Name Field */}
-  <div className="space-y-2">
-    <Label htmlFor="name" className="text-lg font-medium text-[#3b3b3b]">
-      שם מלא *
-    </Label>
-    <Input
-      id="name"
-      value={formData.name}
-      onChange={(e) => handleInputChange('name', e.target.value)}
-      placeholder="הכניסי את שמך המלא"
-      className={`h-12 text-lg bg-white ${
-        errors.name ? 'border-red-500' : 'border-[#F5D9A5]'
-      }`}
-    />
-    {errors.name && (
-      <p className="text-red-500 text-sm flex items-center gap-1">
-        <AlertCircle className="w-4 h-4" />
-        {errors.name}
-      </p>
-    )}
-  </div>
+            <CardContent className='space-y-6'>
+              <form
+                onSubmit={handleSubmit}
+                dir='rtl'
+                className='space-y-6 text-right'
+              >
+                {/* Name Field */}
+                <div className='space-y-2'>
+                  <Label
+                    htmlFor='name'
+                    className='text-lg font-medium text-[#3b3b3b]'
+                  >
+                    שם מלא *
+                  </Label>
+                  <Input
+                    id='name'
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    placeholder='הכניסי את שמך המלא'
+                    className={`h-12 text-lg bg-white ${
+                      errors.name ? 'border-red-500' : 'border-[#F5D9A5]'
+                    }`}
+                  />
+                  {errors.name && (
+                    <p className='text-red-500 text-sm flex items-center gap-1'>
+                      <AlertCircle className='w-4 h-4' />
+                      {errors.name}
+                    </p>
+                  )}
+                </div>
 
-  {/* Phone Field */}
-  <div className="space-y-2">
-    <Label htmlFor="phone" className="text-lg font-medium text-[#3b3b3b]">
-      מספר טלפון *
-    </Label>
-    <Input
-      id="phone"
-      value={formData.phone}
-      onChange={(e) => handleInputChange('phone', e.target.value)}
-      placeholder="050-1234567"
-      className={`h-12 text-lg bg-white ${
-        errors.phone ? 'border-red-500' : 'border-[#F5D9A5]'
-      }`}
-    />
-    {errors.phone && (
-      <p className="text-red-500 text-sm flex items-center gap-1">
-        <AlertCircle className="w-4 h-4" />
-        {errors.phone}
-      </p>
-    )}
-  </div>
+                {/* Phone Field */}
+                <div className='space-y-2'>
+                  <Label
+                    htmlFor='phone'
+                    className='text-lg font-medium text-[#3b3b3b]'
+                  >
+                    מספר טלפון *
+                  </Label>
+                  <Input
+                    id='phone'
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    placeholder='050-1234567'
+                    className={`h-12 text-lg bg-white ${
+                      errors.phone ? 'border-red-500' : 'border-[#F5D9A5]'
+                    }`}
+                  />
+                  {errors.phone && (
+                    <p className='text-red-500 text-sm flex items-center gap-1'>
+                      <AlertCircle className='w-4 h-4' />
+                      {errors.phone}
+                    </p>
+                  )}
+                </div>
 
-  {/* Email Field */}
-  <div className="space-y-2">
-    <Label htmlFor="email" className="text-lg font-medium text-[#3b3b3b]">
-      אימייל *
-    </Label>
-    <Input
-      id="email"
-      type="email"
-      value={formData.email}
-      onChange={(e) => handleInputChange('email', e.target.value)}
-      placeholder="example@email.com"
-      className={`h-12 text-lg bg-white ${
-        errors.email ? 'border-red-500' : 'border-[#F5D9A5]'
-      }`}
-    />
-    {errors.email && (
-      <p className="text-red-500 text-sm flex items-center gap-1">
-        <AlertCircle className="w-4 h-4" />
-        {errors.email}
-      </p>
-    )}
-  </div>
+                {/* Email Field */}
+                <div className='space-y-2'>
+                  <Label
+                    htmlFor='email'
+                    className='text-lg font-medium text-[#3b3b3b]'
+                  >
+                    אימייל *
+                  </Label>
+                  <Input
+                    id='email'
+                    type='email'
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    placeholder='example@email.com'
+                    className={`h-12 text-lg bg-white ${
+                      errors.email ? 'border-red-500' : 'border-[#F5D9A5]'
+                    }`}
+                  />
+                  {errors.email && (
+                    <p className='text-red-500 text-sm flex items-center gap-1'>
+                      <AlertCircle className='w-4 h-4' />
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+{/* oifn epyp pmcf ekcx */}
 
-  {/* Payment Method */}
-  <div className="space-y-4">
-    <Label className="text-lg font-medium text-[#3b3b3b]">אמצעי תשלום</Label>
-    <RadioGroup
-      value={formData.paymentMethod}
-      onValueChange={(value) =>
-        setFormData((prev) => ({ ...prev, paymentMethod: value }))
-      }
-      className="grid grid-cols-2 gap-4"
-    >
-      <div className="flex items-center flex-row-reverse space-x-reverse space-x-2 border-2 border-[#F5D9A5] rounded-xl p-4 hover:border-[#CAAB73] transition-colors">
-        <RadioGroupItem value="bit" id="bit" />
-        <Label
-          htmlFor="bit"
-          className="flex items-center gap-2 cursor-pointer flex-1"
-        >
-          <Smartphone className="w-5 h-5 text-[#664c43]" />
-          <span>Bit</span>
-        </Label>
-      </div>
-      <div className="flex items-center flex-row-reverse space-x-reverse space-x-2 border-2 border-[#F5D9A5] rounded-xl p-4 hover:border-[#CAAB73] transition-colors">
-        <RadioGroupItem value="paybox" id="paybox" />
-        <Label
-          htmlFor="paybox"
-          className="flex items-center gap-2 cursor-pointer flex-1"
-        >
-          <CreditCard className="w-5 h-5 text-[#664c43]" />
-          <span>Paybox</span>
-        </Label>
-      </div>
-    </RadioGroup>
-  </div>
+                {/* Submit Button */}
+                <Button
+                  type='submit'
+                  disabled={isSubmitting}
+                  className='w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                >
+                  {isSubmitting ? (
+                    <div className='flex items-center justify-center gap-2'>
+                      <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-white' />
+                      מעבד תשלום...
+                    </div>
+                  ) : (
+                    'המשך לתשלום'
+                  )}
+                </Button>
 
-  {/* Submit Button */}
-  <Button
-    type="submit"
-    disabled={isSubmitting}
-    className="w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl"
-  >
-    {isSubmitting ? (
-      <div className="flex items-center justify-center gap-2">
-        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white" />
-        מעבד תשלום...
-      </div>
-    ) : (
-      "המשך לתשלום"
-    )}
-  </Button>
-
-  <div className="text-right text-sm text-neutral-500 space-y-1">
-    <p>✓ תשלום מאובטח ומוצפן</p>
-    <p>✓ אישור מיידי במייל</p>
-    <p>✓ ביטול עד 48 שעות לפני האירוע</p>
-  </div>
-</form>
-
+                <div className='text-right text-sm text-neutral-500 space-y-1'>
+                  <p>✓ תשלום מאובטח ומוצפן</p>
+                  <p>✓ אישור מיידי במייל</p>
+                  <p>✓ ביטול עד 48 שעות לפני האירוע</p>
+                </div>
+              </form>
             </CardContent>
           </Card>
         </motion.div>
