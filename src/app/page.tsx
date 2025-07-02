@@ -88,8 +88,10 @@ export default function LandingPage() {
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-rose-50 via-purple-50 to-pink-50'>
-      {/* Hero Section */}
-      <HeroSection onRegisterClick={scrollToRegistration} />
+      <section id='about'>
+        {/* Hero Section */}
+        <HeroSection onRegisterClick={scrollToRegistration} />
+      </section>
 
       {/* Floating Menu */}
 
@@ -130,27 +132,30 @@ export default function LandingPage() {
           ))}
         </FloatingButton>
       </div>
+
       {/* Speaker Section */}
       <SpeakerSection />
-
-      {/* Event Highlights */}
-      <EventHighlights />
+      <section id='eventHighlights'>
+        {/* Event Highlights */}
+        <EventHighlights />
+      </section>
 
       {/* Pricing Section */}
       <PricingSection
         timeLeft={timeLeft}
         onRegisterClick={scrollToRegistration}
       />
-
-      {/* Registration Form */}
-      <RegistrationForm />
-      
-      {/* Social Media */}
-      <SocialSection />
+      <section id='registrationForm'>
+        {/* Registration Form */}
+        <RegistrationForm />
+      </section>
+      <section id='socialSection'>
+        {/* Social Media */}
+        <SocialSection />
+      </section>
 
       {/* Testimonials */}
       <TestimonialsSection />
-
 
       {/* Footer */}
       <Footer />

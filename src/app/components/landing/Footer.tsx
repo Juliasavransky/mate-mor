@@ -78,18 +78,18 @@ const Footer = () => {
           },
         ]}
         mainLinks={[
-          { href: '/about', label: 'About' },
-          { href: '/eventHighlights', label: 'Event details' },
-          { href: '/registrationForm', label: 'Registration Form' },
-          { href: '/socialSection', label: 'Contact' },
+          { href: '#about', label: 'מי אני?' },
+          { href: '#eventHighlights', label: 'פירטי העירוא' },
+          { href: '#registrationForm', label: 'טופס הרשמה' },
+          { href: '#socialSection', label: 'תשמרי על קשר' },
         ]}
         legalLinks={[
           { href: '/privacy', label: '' },
           { href: '/terms', label: '' },
         ]}
         copyright={{
-          text: '© 2025 web-witch מתי מור',
-          license: 'All rights reserved',
+          text: '© 2025 web-witch עיצוב ופיתוח- יוליה סברנסקי פרל- ',
+          license: 'כל הזכויות שמורות למתי מור',
         }}
       />
     </div>
