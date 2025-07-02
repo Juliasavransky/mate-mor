@@ -110,7 +110,6 @@ export default function RegistrationForm() {
     }
   };
 
-
   return (
     <section dir='rtl' className='py-20 bg-white' id='registration'>
       <div className='max-w-3xl mx-auto px-6'>
@@ -121,7 +120,7 @@ export default function RegistrationForm() {
           className='text-center mb-12'
         >
           <h2 className='text-2xl md:text-3xl font-bold text-[#3b3b3b] mb-6'>
-            <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent leading-16'>
+            <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent leading-12'>
               לא סתם הגעת עד לכאן - הגיע הזמן לבחור בך
               <div className='text-[#664c43]'>"כשמספרי החיים פגשו את הלב-</div>
               <div className='text-[#664c43]'>נולד מופע שהוא מתנה לעצמך"</div>
@@ -141,7 +140,7 @@ export default function RegistrationForm() {
           >
             <CardHeader className='text-center pb-6'>
               <div className='flex items-center justify-center gap-3 mb-4'>
-                <Badge className='bg-[#CAAB73] text-white px-4 py-2'>
+                <Badge className='bg-[#CAAB73] text-white text-base px-4 py-2'>
                   <Sparkles className='w-4 h-4 mr-2' />
                   עלות הרשמה מוקדמת 99 ש"ח
                   <Sparkles className='w-4 h-4 ml-2' />
@@ -234,16 +233,15 @@ export default function RegistrationForm() {
                     </p>
                   )}
                 </div>
-{/* oifn epyp pmcf ekcx */}
 
                 {/* Submit Button */}
                 <Button
                   type='submit'
                   disabled={isSubmitting}
-                  className='w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                  className='mt-5 w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
                 >
                   {isSubmitting ? (
-                    <div className='flex items-center justify-center gap-2'>
+                    <div className='flex items-center justify-center gap-2 '>
                       <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-white' />
                       מעבד תשלום...
                     </div>
