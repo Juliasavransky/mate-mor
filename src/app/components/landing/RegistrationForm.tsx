@@ -65,13 +65,16 @@ export default function RegistrationForm() {
     statusText: string;
   }
 
-  const handleSubmit = async (e: HandleSubmitEvent): Promise<void> => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLButtonElement>,
+    redirectUrl: string
+  ): Promise<void> => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
 
     try {
-      const response: SendEmailResponse = await fetch('/api/sendEmail', {
+      const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -79,9 +82,8 @@ export default function RegistrationForm() {
 
       if (!response.ok) throw new Error('Failed to send email');
 
-      await new Promise((r: (value: unknown) => void) => setTimeout(r, 1500)); // Hold before redirect
-      window.location.href =
-        'https://secure.cardcom.solutions/EA/EA5/qiYKgUWmWEuNsbwy4Zo4jw/PaymentSP';
+      await new Promise((r) => setTimeout(r, 1500));
+      window.location.href = redirectUrl;
     } catch (error) {
       console.error(error);
       alert('אירעה שגיאה בשליחת הטופס');
@@ -153,11 +155,7 @@ export default function RegistrationForm() {
             </CardHeader>
 
             <CardContent className='space-y-6'>
-              <form
-                onSubmit={handleSubmit}
-                dir='rtl'
-                className='space-y-6 text-right'
-              >
+              <form dir='rtl' className='space-y-6 text-right'>
                 {/* Name Field */}
                 <div className='space-y-2'>
                   <Label
@@ -235,20 +233,35 @@ export default function RegistrationForm() {
                 </div>
 
                 {/* Submit Button */}
-                <Button
-                  type='submit'
-                  disabled={isSubmitting}
-                  className='mt-5 w-full h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
-                >
-                  {isSubmitting ? (
-                    <div className='flex items-center justify-center gap-2 '>
-                      <div className='animate-spin rounded-full h-5 w-5 border-b-2 border-white' />
-                      מעבד תשלום...
-                    </div>
-                  ) : (
-                    'המשך לתשלום'
-                  )}
-                </Button>
+                <div className='w-full flex flex-col md:flex-row gap-4'>
+                  <Button
+                    type='submit'
+                    onClick={(e) =>
+                      handleSubmit(
+                        e,
+                        'https://secure.cardcom.solutions/EA/EA5/qiYKgUWmWEuNsbwy4Zo4jw/PaymentSP'
+                      )
+                    }
+                    disabled={isSubmitting}
+                    className='w-full md:w-1/2 h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                  >
+                    תשלום בכרטיס אשראי / ביט
+                  </Button>
+
+                  <Button
+                    type='submit'
+                    onClick={(e) =>
+                      handleSubmit(
+                        e,
+                        'https://link.payboxapp.com/1j6HobNV6aXpSbxQ8'
+                      )
+                    }
+                    disabled={isSubmitting}
+                    className='w-full md:w-1/2 h-14 text-xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                  >
+                    תשלום בפייבוקס
+                  </Button>
+                </div>
 
                 <div className='text-right text-sm text-neutral-500 space-y-1'>
                   <p>✓ תשלום מאובטח ומוצפן</p>
