@@ -11,6 +11,7 @@ export default function CalendarCard() {
     <motion.div
       className="flex flex-col items-center space-y-3"
       whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 1.05 }}
     >
       <div className="p-3 bg-white/20 rounded-full">
         <Calendar className="w-8 h-8 text-white" />
@@ -25,7 +26,7 @@ export default function CalendarCard() {
         rel="noopener noreferrer"
         className="group fixed p-4 shadow-lg transition-all"
       >
-        <div className="absolute whitespace-nowrap bottom-full right-1/2 translate-x-1/2 mb-2 px-3 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute whitespace-nowrap bottom-full right-1/2 translate-x-1/2 mb-2 px-3 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100  transition-opacity duration-300">
           להוספה ליומן לחצי
         </div>
       </a>

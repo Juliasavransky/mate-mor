@@ -243,7 +243,7 @@ export default function RegistrationForm() {
                       )
                     }
                     disabled={isSubmitting}
-                    className='w-full md:w-1/2 h-14 text-2xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                    className='w-full md:w-1/2 h-14 text-2xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] focus:bg-[#664c43] active:bg-[#664c43] text-white rounded-xl transform hover:scale-105 active:scale-105 focus:scale-105 transition-all duration-300 shadow-xl'
                   >
                     תשלום בכרטיס אשראי / ביט
                   </Button>
@@ -257,7 +257,7 @@ export default function RegistrationForm() {
                       )
                     }
                     disabled={isSubmitting}
-                    className='w-full md:w-1/2 h-14 text-2xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] text-white rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                    className='w-full md:w-1/2 h-14 text-2xl font-semibold bg-[#CAAB73] hover:bg-[#664c43] focus:bg-[#664c43] active:bg-[#664c43] text-white rounded-xl transform hover:scale-105 active:scale-105 focus:scale-105 transition-all duration-300 shadow-xl'
                   >
                     תשלום דרך פייבוקס
                   </Button>

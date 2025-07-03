@@ -36,6 +36,7 @@ export default function ClockCard() {
     <motion.div
       className='flex flex-col items-center space-y-3 group'
       whileHover={{ scale: 1.05 }}
+      whileTap={{ scale:1.05}}
     >
       <div className='p-3 bg-white/20 rounded-full'>
         <Clock className='w-8 h-8 text-white animate-pulse' />
@@ -45,7 +46,7 @@ export default function ClockCard() {
         <p className='text-white/90 text-base'>שלוש שעות של התרגשות</p>
       </div>
 
-      <div className="absolute top text-xs bg-[#F5E8CD] p-4 rtl text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+      <div className="absolute top text-xs bg-[#F5E8CD] p-4 rtl text-white rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100 transition-opacity duration-300 whitespace-nowrap"
   dir="rtl"
 >
   <div className="flex items-center justify-center gap-3 mb-3">

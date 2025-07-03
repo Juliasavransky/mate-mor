@@ -68,7 +68,7 @@ export default function EventHighlights() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration:1.7, delay: index * 0.1 }}
               >
-                <Card className='border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-[#F5E8CD]/30 h-full'>
+                <Card className='border-none shadow-xl hover:shadow-2xl focus:shadow-2xl active:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-2 bg-[#F5E8CD]/30 h-full'>
                   <CardContent className='p-6 lg:p-8 text-center lg:text-right space-y-4 lg:space-y-0 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-6 lg:justify-items-end'>
                     {/* תוכן – כותרת מודגשת ואחריה תיאור */}
                     <div className='lg:flex lg:flex-row-reverse lg:items-center lg:gap-4 text-center lg:text-right'>

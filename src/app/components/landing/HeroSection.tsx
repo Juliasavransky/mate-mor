@@ -109,7 +109,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className='bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90 backdrop-blur-lg 
              rounded-3xl pl-20 pr-20 pt-9 pb-9  shadow-2xl border border-white/50 
-             hover:shadow-[0_20px_40px_rgba(164,134,79,0.3)] transition-all duration-500 
+             hover:shadow-[0_20px_40px_rgba(164,134,79,0.3)] active:shadow-[0_20px_40px_rgba(164,134,79,0.3)] focus:shadow-[0_20px_40px_rgba(164,134,79,0.3)]transition-all duration-500 
              max-w-[400px] lg:max-w-none mx-auto'
               >
                 <div className='grid md:grid-cols-3 gap-6 text-center'>
@@ -138,8 +138,9 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 {highlights.map((label, index) => (
                   <motion.div
                     key={index}
-                    className='  p-4 rounded-xl  hover:bg-white/60 transition-all duration-300'
+                    className='  p-4 rounded-xl  hover:bg-white/60 active:bg-white/60 focus:bg-white/60 transition-all duration-300'
                     whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{scale: 1.1, y: -2 }}
                   >
                     <p className='text-neutral-700 text-lg font-medium'>
                       {label}
@@ -156,10 +157,11 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
               className='hidden lg:block flex-1 relative min-h-[500px] rounded-2xl overflow-hidden group'
               whileHover={{ scale: 1.02 }}
+              whileTap={{scale:1.02}}
             >
               <div className='absolute inset-0 bg-gradient-to from-[#664c43]/50 to-transparent z-10'></div>
               <div
-                className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110'
+                className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-active:scale-110 group-focus:scale-110'
                 style={{ backgroundImage: "url('/images/Image5.jpeg')" }}
               ></div>
             </motion.div>
@@ -180,7 +182,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
             style={rainbowButtonStyle}
-            className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 mb-10 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl pulse-glow border-2 border-white/30'
+            className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 mb-10 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl focus:scale-105 focus:shadow-4xl active:scale-105 active:shadow-4xl pulse-glow border-2 border-white/30'
           >
             <RotatingStar direction='left' />
             <span className='relative z-10 drop-shadow-lg mb-5 sm:mb-4'>

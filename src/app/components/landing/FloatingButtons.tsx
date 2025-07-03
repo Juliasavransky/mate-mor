@@ -13,7 +13,7 @@ export default function FloatingButtons() {
           href="https://wa.me/972544591175"
           target="_blank"
           rel="noopener noreferrer"
-          className="h-14 w-14 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-lg hover:scale-105 transition-transform duration-300 animate-float"
+          className="h-14 w-14 rounded-full flex items-center justify-center bg-[#25D366] text-white shadow-lg hover:scale-105 focus:scale-105 active:scale-105 transition-transform duration-300 animate-float"
         >
           <Image
             src={WhatsAppIcon}
@@ -23,7 +23,7 @@ export default function FloatingButtons() {
             className="object-contain group-hover:animate-pulse"
           />
         </a>
-        <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100 transition-opacity duration-300 whitespace-nowrap left-1/2 -translate-x-1/2">
           תכתבו לי הודעה
         </div>
       </div>
@@ -32,11 +32,11 @@ export default function FloatingButtons() {
       <div className="fixed bottom-6 right-6 z-50 group">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="h-14 w-14 rounded-full flex items-center justify-center bg-[#0a66c2] text-white shadow-lg hover:scale-110 transition-transform duration-300"
+          className="h-14 w-14 rounded-full flex items-center justify-center bg-[#0a66c2] text-white shadow-lg hover:scale-110 active:scale-100 focus:scale-100 transition-transform duration-300"
         >
-          <ArrowUp className="w-6 h-6 group-hover:animate-bounce" />
+          <ArrowUp className="w-6 h-6 group-hover:animate-bounce group-active:animate-bounce group-focus:animate-bounce" />
         </button>
-        <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100 transition-opacity duration-300 whitespace-nowrap left-1/2 -translate-x-1/2">
           חזור למעלה
         </div>
       </div>

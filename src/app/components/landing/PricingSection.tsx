@@ -127,7 +127,7 @@ export default function PricingSection({
                 <Button
                   onClick={onRegisterClick}
                   dir='rtl'
-                  className='w-full  bg-[#CAAB73] hover:bg-[#664c43] text-white py-8 text-lg font-semibold rounded-xl transform hover:scale-105 transition-all duration-300 shadow-xl'
+                  className='w-full  bg-[#CAAB73] hover:bg-[#664c43] focus:bg-[#664c43] active:bg-[#664c43] text-white py-8 text-lg font-semibold rounded-xl transform hover:scale-105 active:scale-105 focus:scale-105 transition-all duration-300 shadow-xl'
                 >
                   מספר המקומות מוגבל – הזמיני עכשיו!{' '}
                 </Button>
@@ -171,7 +171,7 @@ export default function PricingSection({
 
                 <Button
                   variant='outline'
-                  className='w-full border-neutral-300 text-neutral-700 py-4 text-lg rounded-xl hover:bg-neutral-50'
+                  className='w-full border-neutral-300 text-neutral-700 py-4 text-lg rounded-xl hover:bg-neutral-50  focus:bg-neutral-50 active:bg-neutral-50 transition-all duration-300'
                   disabled
                 >
                   יהיה זמין אחרי ה- 21 ביולי 2025
