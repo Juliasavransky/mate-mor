@@ -129,25 +129,24 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 ומעורר השראה שיחבר אותך לעצמך דרכי
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className='flex items-center lg:justify-start gap-8 bg-white/20 rounded-2xl sm:bg-transparent sm:rounded-none'
-              >
-                {highlights.map((label, index) => (
-                  <motion.div
-                    key={index}
-                    className='  p-4 rounded-xl  hover:bg-white/60 active:bg-white/60 focus:bg-white/60 transition-all duration-300'
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{scale: 1.1, y: -2 }}
-                  >
-                    <p className='text-neutral-700 text-lg font-medium'>
-                      {label}
-                    </p>
-                  </motion.div>
-                ))}
-              </motion.div>
+             <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.8 }}
+  className='flex flex-col sm:flex-row items-center sm:justify-start gap-4 sm:gap-8 bg-white/30 rounded-2xl sm:bg-transparent sm:rounded-none'
+>
+  {highlights.map((label, index) => (
+    <motion.div
+      key={index}
+      className='p-8 rounded-xl hover:bg-white/60 active:bg-white/60 focus:bg-white/60 transition-all duration-300'
+      whileHover={{ scale: 1.1, y: -2 }}
+      whileTap={{ scale: 1.1, y: -2 }}
+    >
+      <p className='text-neutral-700 text-xl text-center font-medium'>{label}</p>
+    </motion.div>
+  ))}
+</motion.div>
+
             </motion.div>
 
             {/* תמונה של מתי במסך גדול */}
