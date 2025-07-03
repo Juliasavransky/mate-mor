@@ -9,6 +9,7 @@ import LayeredBackground from '../landing/LayeredBackground';
 import WazeLocationCard from '../landing/WazeLocationCard';
 import CalendarCard from '../landing/CalendarCard';
 import ClockCard from '../landing/ClockCard';
+import Gold from '../../../../public/images/gold.svg';
 
 interface HeroSectionProps {
   onRegisterClick: () => void;
@@ -157,7 +158,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 {highlights.map((label, index) => (
                   <motion.div
                     key={index}
-                    className=' bg-white/40 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:bg-white/60 transition-all duration-300'
+                    className='  p-4 rounded-xl  hover:bg-white/60 transition-all duration-300'
                     whileHover={{ scale: 1.1, y: -2 }}
                   >
                     <p className='text-neutral-700 text-lg font-medium'>
@@ -183,6 +184,13 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               ></div>
             </motion.div>
           </div>
+          <Image
+            src={Gold}
+            alt='gold line'
+            width={900}
+            height={90}
+            className='rotate-[238deg] absolute bottom-[-200px] left-[-33px] '
+          />
 
           <motion.button
             initial={{ opacity: 0, y: 60 }}
