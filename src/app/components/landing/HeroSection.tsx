@@ -6,23 +6,28 @@ import { SparklesText } from '@/components/ui/sparkles-text';
 import { Calendar, Clock, MapPin, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LayeredBackground from '../landing/LayeredBackground';
+import WazeLocationCard from '../landing/WazeLocationCard';
+
 
 interface HeroSectionProps {
   onRegisterClick: () => void;
 }
 
-const wazeUrl = 'https://waze.com/ul?q=אשכול+פיס+בת+ים';
+const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=מסע+החיים+שלי+-+מתי+מור&dates=20250914T150000Z/20250914T180000Z&details=ערב+השראה+וחיבור+רוחני&location=אשכול+פיס+בת+ים`;
 
 const eventDetails = [
   {
     icon: <Calendar className='w-8 h-8 text-white' />,
     title: 'יום ראשון',
     subtitle: '14/09/2025',
+    hoverText: 'להוספה ליומן לחצי ',
+    onclick: () => window.open("URL", '_blank'),
   },
   {
     icon: <Clock className='w-8 h-8 text-white' />,
     title: '18:00-21:00',
     subtitle: 'שלוש שעות של התרגשות',
+    hoverText: '  הערב מתחיל בעוד',
   },
 ];
 
@@ -90,7 +95,6 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
         <LayeredBackground />
 
         <div className='relative z-10 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 md:py-16 flex flex-col gap-12'>
-
           {/* לוגו למובייל */}
           <div className='lg:hidden mx-auto mt-3'>
             <Image
@@ -139,55 +143,44 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-  className='bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90 backdrop-blur-lg 
+                className='bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90 backdrop-blur-lg 
              rounded-3xl pl-20 pr-20 pt-9 pb-9  shadow-2xl border border-white/50 
              hover:shadow-[0_20px_40px_rgba(164,134,79,0.3)] transition-all duration-500 
-             max-w-[400px] lg:max-w-none mx-auto'              >
+             max-w-[400px] lg:max-w-none mx-auto'
+              >
                 <div className='grid md:grid-cols-3 gap-6 text-center'>
-                  {eventDetails.map(({ icon, title, subtitle }, index) => (
-                    <motion.div
-                      key={index}
-                      className='flex flex-col items-center space-y-3'
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className='p-3 bg-white/20 rounded-full'>{icon}</div>
-                      <div>
-                        <p className='font-bold text-white text-lg'>{title}</p>
-                        <p className='text-white/90 text-base'>{subtitle}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-
-                  <motion.div
-                    className='flex flex-col items-center space-y-3 group'
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <a
-                      href={wazeUrl}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='flex flex-col items-center space-y-3'
-                    >
-                      <div className='p-3 bg-white/20 rounded-full transition-all duration-300'>
-                        <div className='relative w-8 h-8'>
-                          <MapPin className='w-8 h-8 text-white absolute inset-0 group-hover:opacity-0 transition-opacity duration-300' />
-                          <img
-                            src='/images/waze.png'
-                            alt='Waze'
-                            className='w-8 h-8 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
-                          />
-                          <div className='absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap right-1/2 translate-x-1/2'>
-                            לחצי כאן לניווט
-                          </div>
+                  {eventDetails.map(
+                    ({ icon, title, subtitle, hoverText }, index) => (
+                      <motion.div
+                        key={index}
+                        className='flex flex-col items-center space-y-3'
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <div className='p-3 bg-white/20 rounded-full'>
+                          {icon}
                         </div>
-                      </div>
-                      <div>
-                        <p className='font-bold text-white text-lg'>אשכול פיס</p>
-                        <p className='font-bold text-white text-lg'> סמטת הדקל 5 בת-ים </p>
-                        <p className='text-white/90 text-base'>חניה בשפע</p>
-                      </div>
-                    </a>
-                  </motion.div>
+                        <div>
+                          <p className='font-bold text-white text-lg'>
+                            {title}
+                          </p>
+                          <p className='text-white/90 text-base'>{subtitle}</p>
+                        </div>
+                        <a
+                          href={googleCalendarUrl}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='group fixed   p-4 shadow-lg transition-all'
+                        >
+                          <div className='absolute whitespace-nowrap bottom-full right-1/2 translate-x-1/2 mb-2 px-3 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                             {hoverText}
+                          </div>
+                        </a>
+                      </motion.div>
+                    )
+                  )}
+
+<WazeLocationCard />
+              
                 </div>
               </motion.div>
 
@@ -197,7 +190,8 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 transition={{ duration: 1, delay: 0.6 }}
                 className='text-xl md:text-3xl text-neutral-700 leading-relaxed font-light text-balance p-3 rounded-2xl'
               >
-                חודש הסליחות, עשרת ימי תשובה הצטרפי אליי לערב נשי מיוחד, עוצמתי ומעורר השראה שיחבר אותך לעצמך דרכי
+                חודש הסליחות, עשרת ימי תשובה הצטרפי אליי לערב נשי מיוחד, עוצמתי
+                ומעורר השראה שיחבר אותך לעצמך דרכי
               </motion.p>
 
               <motion.div
@@ -212,7 +206,9 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                     className=' bg-white/40 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:bg-white/60 transition-all duration-300'
                     whileHover={{ scale: 1.1, y: -2 }}
                   >
-                    <p className='text-neutral-700 text-lg font-medium'>{label}</p>
+                    <p className='text-neutral-700 text-lg font-medium'>
+                      {label}
+                    </p>
                   </motion.div>
                 ))}
               </motion.div>
