@@ -7,29 +7,12 @@ import { Calendar, Clock, MapPin, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LayeredBackground from '../landing/LayeredBackground';
 import WazeLocationCard from '../landing/WazeLocationCard';
-
+import CalendarCard from '../landing/CalendarCard';
+import ClockCard from '../landing/ClockCard';
 
 interface HeroSectionProps {
   onRegisterClick: () => void;
 }
-
-const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=מסע+החיים+שלי+-+מתי+מור&dates=20250914T150000Z/20250914T180000Z&details=ערב+השראה+וחיבור+רוחני&location=אשכול+פיס+בת+ים`;
-
-const eventDetails = [
-  {
-    icon: <Calendar className='w-8 h-8 text-white' />,
-    title: 'יום ראשון',
-    subtitle: '14/09/2025',
-    hoverText: 'להוספה ליומן לחצי ',
-    onclick: () => window.open("URL", '_blank'),
-  },
-  {
-    icon: <Clock className='w-8 h-8 text-white' />,
-    title: '18:00-21:00',
-    subtitle: 'שלוש שעות של התרגשות',
-    hoverText: '  הערב מתחיל בעוד',
-  },
-];
 
 const highlights = [
   'סיפור אישי חשוף ועמוק',
@@ -149,38 +132,9 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
              max-w-[400px] lg:max-w-none mx-auto'
               >
                 <div className='grid md:grid-cols-3 gap-6 text-center'>
-                  {eventDetails.map(
-                    ({ icon, title, subtitle, hoverText }, index) => (
-                      <motion.div
-                        key={index}
-                        className='flex flex-col items-center space-y-3'
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <div className='p-3 bg-white/20 rounded-full'>
-                          {icon}
-                        </div>
-                        <div>
-                          <p className='font-bold text-white text-lg'>
-                            {title}
-                          </p>
-                          <p className='text-white/90 text-base'>{subtitle}</p>
-                        </div>
-                        <a
-                          href={googleCalendarUrl}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='group fixed   p-4 shadow-lg transition-all'
-                        >
-                          <div className='absolute whitespace-nowrap bottom-full right-1/2 translate-x-1/2 mb-2 px-3 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                             {hoverText}
-                          </div>
-                        </a>
-                      </motion.div>
-                    )
-                  )}
-
-<WazeLocationCard />
-              
+                  <CalendarCard />
+                  <ClockCard />
+                  <WazeLocationCard />
                 </div>
               </motion.div>
 

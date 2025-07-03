@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Timer, Clock, AlertCircle, Star } from "lucide-react";
+import { Timer,  Star } from "lucide-react";
 import { motion } from "framer-motion";
 import LayeredBackground from '../landing/LayeredBackground';
 

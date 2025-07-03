@@ -22,7 +22,7 @@ export default function LandingPage() {
   // Calculate time until early bird deadline
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const earlyBirdDeadline = new Date('2025-07-12T23:59:59');
+const earlyBirdDeadline = new Date('2025-07-22T23:59:59');
       const now = new Date();
       const difference = earlyBirdDeadline.getTime() - now.getTime();
 
