@@ -10,6 +10,7 @@ export default function WazeLocationCard() {
     <motion.div
       className='flex flex-col items-center space-y-3 group'
       whileHover={{ scale: 1.05 }}
+      whileTap={{scale:1.05}}
     >
       <a
         href={wazeUrl}
@@ -19,13 +20,13 @@ export default function WazeLocationCard() {
       >
         <div className='p-3 bg-white/20 rounded-full transition-all duration-300'>
           <div className='relative w-8 h-8'>
-            <MapPin className='w-8 h-8 text-white absolute inset-0 group-hover:opacity-0 transition-opacity duration-300' />
+            <MapPin className='w-8 h-8 text-white absolute inset-0 group-hover:opacity-0  group-active:opacity-0 group-focus:opacity-0 transition-opacity duration-300' />
             <img
               src='/images/waze.png'
               alt='Waze'
-              className='w-8 h-8 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+              className='w-8 h-8 absolute inset-0 opacity-0 group-hover:opacity-100  group-active:opacity-100 group-focus:opacity-100 transition-opacity duration-300'
             />
-            <div className='absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap right-1/2 translate-x-1/2'>
+            <div className='absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-active:opacity-100 group-focus:opacity-100 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap right-1/2 translate-x-1/2'>
               לחצי כאן לניווט
             </div>
           </div>

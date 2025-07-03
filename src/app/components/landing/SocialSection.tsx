@@ -79,7 +79,7 @@ export default function SocialSection() {
                   if (e.key === 'Enter') window.open(social.url, '_blank');
                 }}
               >
-                <Card className='border-none shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-[#F5E8CD]/40 h-full'>
+                <Card className='border-none shadow-xl hover:shadow-2xl focus:shadow-2xl active:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-2 bg-[#F5E8CD]/40 h-full'>
                   <CardContent className='p-8 text-center space-y-6'>
                     <div
                       className='w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4'
@@ -143,7 +143,7 @@ export default function SocialSection() {
                 </p>
                 <Button
                   variant='outline'
-                  className='border-[#664c43] text-[#664c43]  hover:bg-[#664c43] hover:text-white'
+                  className='border-[#664c43] text-[#664c43]  hover:bg-[#664c43] hover:text-white   focus:bg-[#664c43] focus:text-white active:bg-[#664c43] active:text-white transition-all duration-300'
                   onClick={() => {
                     if (navigator.share) {
                       navigator.share({
