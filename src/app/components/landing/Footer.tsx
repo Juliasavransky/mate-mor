@@ -79,7 +79,7 @@ const Footer = () => {
         ]}
         mainLinks={[
           { href: '#about', label: 'מי אני?' },
-          { href: '#eventHighlights', label: 'פירטי העירוא' },
+          { href: '#eventHighlights', label: 'פירטי האירוע ' },
           { href: '#registrationForm', label: 'טופס הרשמה' },
           { href: '#socialSection', label: 'תשמרי על קשר' },
         ]}
