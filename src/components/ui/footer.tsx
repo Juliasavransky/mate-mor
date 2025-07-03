@@ -44,7 +44,7 @@ export function UiFooter({
             aria-label={brandName}
           >
             {logo}
-            <span className='font-bold text-xl'>{brandName}</span>
+            <span className='font-bold text-2xl'>{brandName}</span>
           </a>
 
           <ul className='flex justify-center list-none mt-2 md:mt-0 gap-4'>

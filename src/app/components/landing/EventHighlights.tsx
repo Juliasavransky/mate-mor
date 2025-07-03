@@ -58,7 +58,7 @@ export default function EventHighlights() {
               בערב מיוחד זה?
             </span>
           </h2>
-          <p className='text-xl text-neutral-600 max-w-3xl mx-auto'>
+          <p className='text-2xl text-neutral-600 max-w-3xl mx-auto'>
             ערב מלא באור, במשמעות ובהפתעות שיעשו את הלב שמח
           </p>
         </motion.div>
@@ -77,7 +77,7 @@ export default function EventHighlights() {
                   <CardContent className='p-6 lg:p-8 text-center lg:text-right space-y-4 lg:space-y-0 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-6 lg:justify-items-end'>
                     {/* תוכן – כותרת מודגשת ואחריה תיאור */}
                     <div className='lg:flex lg:flex-row-reverse lg:items-center lg:gap-4 text-center lg:text-right'>
-                      <h3 className='text-xl font-bold text-[#3b3b3b] mb-2 lg:mb-0'>
+                      <h3 className='text-2xl font-bold text-[#3b3b3b] mb-2 lg:mb-0'>
                         {highlight.title}
                       </h3>
                       <p className='text-neutral-600 leading-relaxed'>
@@ -107,17 +107,17 @@ export default function EventHighlights() {
               <div className='grid md:grid-cols-3 gap-6 text-center'>
                 <div className='space-y-2'>
                   <Clock className='w-8 h-8 mx-auto' />
-                  <h4 className='text-xl font-bold'> שלוש שעות </h4>
+                  <h4 className='text-2xl font-bold'> שלוש שעות </h4>
                   <p className='text-[#F5E8CD]'>של השראה והעשרה</p>
                 </div>
                 <div className='space-y-2'>
                   <Star className='w-8 h-8 mx-auto' />
-                  <h4 className='text-xl font-bold'>אירוע חד פעמי</h4>
+                  <h4 className='text-2xl font-bold'>אירוע חד פעמי</h4>
                   <p className='text-[#F5E8CD]'>שלא יחזור שוב</p>
                 </div>
                 <div className='space-y-2'>
                   <Heart className='w-8 h-8 mx-auto' />
-                  <h4 className='text-xl font-bold'>מהלב אל הלב</h4>
+                  <h4 className='text-2xl font-bold'>מהלב אל הלב</h4>
                   <p className='text-[#F5E8CD]'>חוויה אותנטית ומרגשת</p>
                 </div>
               </div>

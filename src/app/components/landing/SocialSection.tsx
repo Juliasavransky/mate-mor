@@ -60,7 +60,7 @@ export default function SocialSection() {
               בואי נישאר בקשר
             </span>
           </h2>
-          <p className='text-xl text-neutral-600 max-w-3xl mx-auto'>
+          <p className='text-2xl text-neutral-600 max-w-3xl mx-auto'>
             הצטרפי לקהילה שלנו לתכנים מעוררי השראה ועדכונים על אירועים עתידיים
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ export default function SocialSection() {
                     </div>
 
                     <div className='space-y-3'>
-                      <h3 className='text-xl font-bold text-[#3b3b3b]'>
+                      <h3 className='text-2xl font-bold text-[#3b3b3b]'>
                         {social.name}
                       </h3>
 

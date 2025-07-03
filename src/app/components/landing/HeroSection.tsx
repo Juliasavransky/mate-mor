@@ -123,7 +123,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className='text-xl md:text-3xl text-neutral-700 leading-relaxed font-light text-balance p-3 rounded-2xl'
+                className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance p-3 rounded-2xl'
               >
                 חודש הסליחות, עשרת ימי תשובה הצטרפי אליי לערב נשי מיוחד, עוצמתי
                 ומעורר השראה שיחבר אותך לעצמך דרכי

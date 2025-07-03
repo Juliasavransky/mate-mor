@@ -79,7 +79,7 @@ export default function SpeakerSection() {
                     היעוד שלנו
                   </span>
                   <span>"</span>
-                  <div dir="ltr" className='italic text-xl text-[#664c43]'>- מתי מור</div>
+                  <div dir="ltr" className='italic text-2xl text-[#664c43]'>- מתי מור</div>
                 </span>
               </div>
             </div>

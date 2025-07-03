@@ -39,7 +39,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
       השפעה גדולה
     </span>
   </h2>
-  <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+  <p className="text-2xl text-neutral-600 max-w-3xl mx-auto">
     ערב שישנה את נקודת המבט שלך על החיים במחיר מיוחד למרשמות מוקדם
   </p>
 </motion.div>
@@ -74,7 +74,7 @@ export default function PricingSection({ timeLeft, onRegisterClick }: PricingSec
                      </div>
                      <span className="text-6xl font-bold text-[#CAAB73]">בלבד  </span>
               
-                  <div className="text-neutral-500 line-through text-xl">₪129</div>
+                  <div className="text-neutral-500 line-through text-2xl">₪129</div>
                 </div>
 
               {isEarlyBird && timeLeft.days !== undefined && (
