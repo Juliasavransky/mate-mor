@@ -104,7 +104,6 @@ export default function SocialSection() {
                       <p className='text-neutral-700 font-medium'>
                         {social.handle}
                       </p>
-
                     </div>
 
                     <Button
