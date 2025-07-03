@@ -69,7 +69,7 @@ export default function SpeakerSection() {
                 </p>
                 <p>
                   במופע "מסע חיי" אני פותחת דלת ללב שלי – ומשתפת מסע אישי של
-                  התגברות, התמודדות, אמונה והודי'ה בשילוב הנומרולוגיה.
+                  התגברות, התמודדות, אמונה והודיה בשילוב הנומרולוגיה.
                 </p>
 
                 <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>

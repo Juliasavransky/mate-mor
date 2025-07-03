@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { SparklesText } from '@/components/ui/sparkles-text';
-import {  Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LayeredBackground from '../landing/LayeredBackground';
 import WazeLocationCard from '../landing/WazeLocationCard';
@@ -82,7 +82,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
               className='text-right flex flex-col gap-4 md:mt-6'
             >
-              <SparklesText text='מופע חד פעמי-   מסע חיי עם מתי מור ' />
+              <SparklesText text='מופע חד פעמי -   מסע חיי עם מתי מור ' />
             </motion.div>
           </motion.div>
 
@@ -125,7 +125,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 transition={{ duration: 1, delay: 0.6 }}
                 className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance p-3 rounded-2xl'
               >
-                חודש הסליחות, עשרת ימי תשובה הצטרפי אליי לערב נשי מיוחד, עוצמתי
+                חודש הסליחות, עשרת ימי תשובה, הצטרפי אליי לערב נשי מיוחד, עוצמתי
                 ומעורר השראה שיחבר אותך לעצמך דרכי
               </motion.p>
 
@@ -133,7 +133,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className='flex items-center lg:justify-start gap-8'
+                className='flex items-center lg:justify-start gap-8 bg-white/20 rounded-2xl sm:bg-transparent sm:rounded-none'
               >
                 {highlights.map((label, index) => (
                   <motion.div
@@ -180,10 +180,11 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
             style={rainbowButtonStyle}
-            className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl pulse-glow border-2 border-white/30'
+            className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 mb-10 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl pulse-glow border-2 border-white/30'
           >
             <RotatingStar direction='left' />
-            <span className='relative z-10 drop-shadow-lg sm:mb-4'>
+            <span className='relative z-10 drop-shadow-lg mb-5 sm:mb-4'>
+              {' '}
               <span className='block sm:hidden'>שרייני מקום</span>
               <span className='hidden sm:block'>שמרי את מקומך עכשיו</span>
             </span>

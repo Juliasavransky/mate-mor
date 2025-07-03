@@ -102,7 +102,7 @@ transition-all duration-300 ${link.bgColor} ${link.hoverColor || ''}`}
             </ul>
           </div>
 
-          <div className='mt-6 pr-22 text-base leading-6 text-white whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]'>
+          <div dir="rtl" className='mt-6 pr-22 text-base leading-6 text-white whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]'>
             <div>{copyright.text}</div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>

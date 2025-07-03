@@ -15,8 +15,7 @@ export default function SocialSection() {
       image: facebook,
       alt: 'Facebook',
       name: 'Facebook',
-      handle: 'www.facebook.com/mate.mor',
-      description: 'קשר בחיבור ישירות אליי',
+      handle: 'www.facebook.com/mati.mor',
       color: '#1877F2',
       url: 'https://www.facebook.com/mzmor?locale=he_IL',
       width: 46,
@@ -26,8 +25,7 @@ export default function SocialSection() {
       image: instagram,
       alt: 'Instagram',
       name: 'Instagram',
-      handle: '@mate.mor',
-      description: 'קשר בחיבור ישירות אליי',
+      handle: '@mati.mor',
       gradient: 'linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);',
       url: 'https://www.instagram.com/matimor40/',
       width: 48,
@@ -38,7 +36,6 @@ export default function SocialSection() {
       alt: 'WhatsApp',
       name: 'WhatsApp',
       handle: '054-4591175',
-      description: 'קשר בחיבור ישירות אליי',
       color: '#26d366',
       url: 'https://wa.me/972544591175',
       width: 40,
@@ -108,9 +105,6 @@ export default function SocialSection() {
                         {social.handle}
                       </p>
 
-                      <p className='text-neutral-600 leading-relaxed text-sm'>
-                        {social.description}
-                      </p>
                     </div>
 
                     <Button
@@ -142,12 +136,12 @@ export default function SocialSection() {
             <CardContent className='p-2'>
               <div className='space-y-2'>
                 <Share2 className='w-8 h-8 text-[#664c43] mx-auto' />
-                <h3 dir="rtl" className='text-2xl font-bold text-[#3b3b3b]'>
+                <h3 dir='rtl' className='text-2xl font-bold text-[#3b3b3b]'>
                   מוזמנת לשתף!
                 </h3>
-                <p dir="rtl"className='text-neutral-600 '>
-מופע עוצמתי חד פעמי
-עם מי בא לך לבוא?                </p>
+                <p dir='rtl' className='text-neutral-600 '>
+                  מופע עוצמתי חד פעמי. עם מי בא לך לבוא?{' '}
+                </p>
                 <Button
                   variant='outline'
                   className='border-[#664c43] text-[#664c43]  hover:bg-[#664c43] hover:text-white'

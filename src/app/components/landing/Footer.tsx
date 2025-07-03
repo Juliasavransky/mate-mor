@@ -20,7 +20,7 @@ const Footer = () => {
             ),
             href: 'https://www.facebook.com/mzmor?locale=he_IL',
             label: 'Facebook',
-            tooltip: 'תעכבו אחרי',
+            tooltip: 'עקבו אחרי',
             hoverColor: 'hover:bg-[#1877F2]',
             bgColor: 'bg-[#f5e8cd]',
           },
@@ -30,7 +30,7 @@ const Footer = () => {
             ),
             href: 'https://www.instagram.com/matimor40/',
             label: 'Instagram',
-            tooltip: 'תעכבו אחרי',
+            tooltip: 'עקבו אחרי',
             hoverColor: 'hover:bg-[#ee2a7b]',
             bgColor: 'bg-[#f5e8cd]',
           },
@@ -44,7 +44,7 @@ const Footer = () => {
             ),
             href: 'https://wa.me/972544591175',
             label: 'Whatsapp',
-            tooltip: 'תכתבו לי',
+            tooltip: 'כתבו לי',
             hoverColor: 'hover:bg-[#26d366]',
             bgColor: 'bg-[#f5e8cd]',
           },
@@ -58,7 +58,7 @@ const Footer = () => {
             ),
             href: 'https://mail.google.com/mail/?view=cm&fs=1&to=matimor40@gmail.com&su=פנייה מהאתר&body=שלום מתי, אשמח לשמוע פרטים נוספים לגבי הערב.',
             label: 'Mail',
-            tooltip: 'תכתבו לי',
+            tooltip: 'כתבו לי',
             hoverColor: 'hover:bg-[#D93025]',
             bgColor: 'bg-[#f5e8cd]',
           },
@@ -72,14 +72,14 @@ const Footer = () => {
             ),
             href: 'tel:0544591175',
             label: 'Phone call',
-            tooltip: 'תתקשרו אלי',
+            tooltip: 'התקשרו אלי',
             hoverColor: 'hover:bg-[#4CAF50]',
             bgColor: 'bg-[#f5e8cd]',
           },
         ]}
         mainLinks={[
           { href: '#about', label: 'מי אני?' },
-          { href: '#eventHighlights', label: 'פירטי האירוע ' },
+          { href: '#eventHighlights', label: 'פרטי האירוע ' },
           { href: '#registrationForm', label: 'טופס הרשמה' },
           { href: '#socialSection', label: 'תשמרי על קשר' },
         ]}
@@ -88,7 +88,7 @@ const Footer = () => {
           { href: '/terms', label: '' },
         ]}
         copyright={{
-          text: '© 2025 web-witch עיצוב ופיתוח- יוליה סברנסקי פרל- ',
+          text: '© 2025 web-witch עיצוב ופיתוח- יוליה סברנסקי פרל ',
           license: 'כל הזכויות שמורות למתי מור',
         }}
       />

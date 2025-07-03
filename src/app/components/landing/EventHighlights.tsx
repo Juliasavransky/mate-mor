@@ -4,14 +4,9 @@ import {
   Gift,
   Heart,
   Camera,
-  Utensils,
-  Sparkles,
-  Users,
   Clock,
   Star,
-  HandHeart,
   Wand,
-  Zap,
   Gem,
   BookOpenText,
 } from 'lucide-react';
@@ -51,7 +46,7 @@ export default function EventHighlights() {
           transition={{ duration: 0.8 }}
           className='text-center mb-16'
         >
-          <h2 className='text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6'>
+          <h2 dir="rtl"className='text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6'>
             מה מחכה לך
             <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
               {' '}

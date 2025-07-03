@@ -233,8 +233,8 @@ export default function TestimonialsCarousel() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          <motion.div
+        <div  className="relative">
+          <motion.div 
             className="flex transition-transform"
             animate={{ x: `-${currentIndex * (100 / visibleCount)}%` }}
             transition={{ type: "spring", stiffness: 70, damping: 20 }}
@@ -257,7 +257,7 @@ export default function TestimonialsCarousel() {
                     </div>
                   </div>
 
-                  <p className="text-neutral-700 text-base leading-relaxed italic">
+                  <p dir="rtl" className="text-neutral-700 text-base leading-relaxed italic">
                     "{testimonial.text}"
                   </p>
 
