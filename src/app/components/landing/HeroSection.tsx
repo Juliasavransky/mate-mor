@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { SparklesText } from '@/components/ui/sparkles-text';
-import { Calendar, Clock, MapPin, Star } from 'lucide-react';
+import {  Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LayeredBackground from '../landing/LayeredBackground';
 import WazeLocationCard from '../landing/WazeLocationCard';
@@ -44,26 +44,6 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
 
   return (
     <>
-      <style jsx>{`
-        @keyframes slidebg {
-          to {
-            background-position: 300% center;
-          }
-        }
-        @keyframes pulse-glow {
-          0%,
-          100% {
-            box-shadow: 0 0 20px rgba(164, 134, 79, 0.3);
-          }
-          50% {
-            box-shadow: 0 0 40px rgba(164, 134, 79, 0.6);
-          }
-        }
-        .pulse-glow {
-          animation: pulse-glow 7s ease-in-out infinite;
-        }
-      `}</style>
-
       {/* לוגו בדסקטופ */}
       <div className='hidden lg:block absolute top-4 left-4 z-50'>
         <Image
@@ -116,7 +96,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             </div>
           </div>
 
-          <div className='flex flex-col lg:flex-row justify-between w-full gap-12 items-stretch'>
+          <div className='flex flex-col lg:flex-row justify-between w-full gap-12 items-stretch z-10'>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -203,7 +183,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl pulse-glow border-2 border-white/30'
           >
             <RotatingStar direction='left' />
-            <span className='relative z-10 drop-shadow-lg'>
+            <span className='relative z-10 drop-shadow-lg sm:mb-4'>
               <span className='block sm:hidden'>שרייני מקום</span>
               <span className='hidden sm:block'>שמרי את מקומך עכשיו</span>
             </span>

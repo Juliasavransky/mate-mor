@@ -8,7 +8,7 @@ export default function FloatingButtons() {
   return (
     <>
       {/* WhatsApp Button */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 group">
+      <div className="fixed left-2 top-2/3 transform -translate-y-1/2 z-50 group">
         <a
           href="https://wa.me/972544591175"
           target="_blank"
