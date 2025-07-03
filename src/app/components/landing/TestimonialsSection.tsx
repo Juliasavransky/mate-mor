@@ -234,15 +234,6 @@ export default function TestimonialsCarousel() {
         </motion.div>
 
         <div className="relative">
-          <div className="flex justify-center gap-4 mb-6">
-            <button onClick={goPrev} disabled={!canGoPrev} className="p-2 rounded-full bg-white text-[#664c43] shadow-md hover:shadow-lg disabled:opacity-40">
-              <ChevronRight className="rotate-180" />
-            </button>
-            <button onClick={goNext} disabled={!canGoNext} className="p-2 rounded-full bg-white text-[#664c43] shadow-md hover:shadow-lg disabled:opacity-40">
-              <ChevronRight />
-            </button>
-          </div>
-
           <motion.div
             className="flex transition-transform"
             animate={{ x: `-${currentIndex * (100 / visibleCount)}%` }}
@@ -287,6 +278,14 @@ export default function TestimonialsCarousel() {
               </motion.div>
             ))}
           </motion.div>
+            <div className="flex justify-center gap-4 mt-8">
+            <button onClick={goPrev} disabled={!canGoPrev} className="p-2 rounded-full bg-white text-[#664c43] shadow-md hover:shadow-lg disabled:opacity-40">
+              <ChevronRight className="rotate-180" />
+            </button>
+            <button onClick={goNext} disabled={!canGoNext} className="p-2 rounded-full bg-white text-[#664c43] shadow-md hover:shadow-lg disabled:opacity-40">
+              <ChevronRight />
+            </button>
+          </div>
         </div>
       </div>
     </div>
