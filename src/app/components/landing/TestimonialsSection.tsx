@@ -315,25 +315,18 @@ export default function TestimonialsCarousel() {
           </div>
         </div>
       </div>
-      {/* <div
-        className='relative inset-0 w-full h-[600px] overflow-hidden bg-cover bg-center '
-        style={{
-          backgroundImage: `url('/images/matiPart.jpg')`,
-          backgroundBlendMode: 'overlay',
-        }}
-      ></div> */}
 
       <div
   className="w-full h-[600px] relative  overflow-hidden"
   style={{
-    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
-    maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
+    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',
+    maskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',
   }}
 >
   <img
     src="/images/matiPart.jpg"
     alt="..."
-    className="w-full h-full object-cover object-[center_top]"
+    className="w-full h-full object-cover object-[center]"
   />
 </div>
 
