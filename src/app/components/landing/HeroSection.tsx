@@ -71,8 +71,9 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
               className='text-center md:text-right'
             >
+              <SparklesText text='"מזל שיש אותך"' />
               <SparklesText
-                text='"מזל שיש אותך"
+                text='  
 מופע מסע חיי
 עם מתי מור '
               />

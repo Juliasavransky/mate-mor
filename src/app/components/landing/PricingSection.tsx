@@ -37,7 +37,7 @@ export default function PricingSection({
           viewport={{ once: true }}
           className='text-center mb-16'
         >
-          <h2 className='text-4xl md:text-5xl text-normalize font-bold text-[#3b3b3b] mb-6 mt-12 ml-2 mr-2 p-2'>
+          <h2 className='text-4xl md:text-5xl text-normalize font-bold text-[#3b3b3b] mb-6 mt-12 ml-4 mr-4 p-2'>
             השקעה קטנה,
             <span className='text-normalize bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
               {' '}
