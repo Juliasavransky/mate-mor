@@ -33,10 +33,10 @@ export default function SpeakerSection() {
               <div className='absolute inset-0 flex items-center justify-center'>
                 <div className='w-48 h-48 bg-[#CAAB73] rounded-full flex items-center justify-center'>
                   <div
-                    className='absolute inset-0 bg-cover bg-center'
+                    className='absolute inset-0 bg-cover bg-[60%_20%]'
                     style={{
                       backgroundImage: `
-      url('/images/Image3.jpeg')`,
+      url('/images/MatiHero.jpg')`,
                       backgroundBlendMode: 'overlay',
                     }}
                   ></div>

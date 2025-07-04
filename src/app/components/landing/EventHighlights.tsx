@@ -72,7 +72,7 @@ export default function EventHighlights() {
                 transition={{ duration: 1.7, delay: index * 0.1 }}
               >
                 <Card
-                  className='border-none shadow-xl hover:shadow-2xl focus:shadow-2xl active:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-2 
+                  className='border-none  hover:shadow-2xl focus:shadow-2xl active:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-2 
 bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90
  backdrop-blur-lg 
  h-full  rounded-3xl  shadow-2xl   '

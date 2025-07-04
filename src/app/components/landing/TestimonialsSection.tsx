@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import {  ChevronRight, Quote, Star } from "lucide-react";
 import LayeredBackground from '../landing/LayeredBackground';
-
+import Image from "next/image";
+import MatiW from '../../../../public/images/MatiW.jpg';
 
 const testimonials = [
   {
@@ -289,7 +290,15 @@ export default function TestimonialsCarousel() {
         </div>
       </div>
     </div>
-                      
+<div className="relative w-full h-[500px] md:h-[400px] overflow-hidden">
+  <img
+    src={MatiW.src}
+    alt="background section"
+    className="absolute inset-0 w-full h-full object-cover filter object-[65%_35%] scale-105 top "
+  />
+</div>
+
+
                       </>
   );
 }

@@ -81,10 +81,10 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
 
           {/* תמונה של מתי - רק למובייל */}
           <div className='lg:hidden'>
-            <div className='relative min-h-[420px] rounded-2xl overflow-hidden'>
+            <div className='relative min-h-[420px]   rounded-2xl overflow-hidden'>
               <div
-                className='absolute inset-0 bg-cover bg-center'
-                style={{ backgroundImage: "url('/images/Image5.jpeg')" }}
+                className='absolute inset-0 bg-cover  object-[center_70%]'
+                style={{ backgroundImage: "url('/images/MatiWhiteT.jpg')" }}
               ></div>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               <div className='absolute inset-0 bg-gradient-to from-[#664c43]/50 to-transparent z-10'></div>
               <div
                 className='absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 group-active:scale-110 group-focus:scale-110'
-                style={{ backgroundImage: "url('/images/Image5.jpeg')" }}
+                style={{ backgroundImage: "url('/images/MatiWhiteT.jpg')" }}
               ></div>
             </motion.div>
           </div>
@@ -194,11 +194,11 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             style={rainbowButtonStyle}
             className='relative w-full max-w-[820px] 
             mx-auto flex items-center justify-center gap-8 mb-10 
-            rounded-full px-20 py-4 text-3xl font-bold text-white
+            rounded-full  py-4 text-3xl font-bold text-white
              overflow-hidden transition-all duration-500 
              ease-out hover:scale-105 hover:shadow-4xl 
              focus:scale-105 focus:shadow-4xl active:scale-105
-              active:shadow-4xl pulse-glow border-2 border-white/30'
+              active:shadow-4xl pulse-glow border-2 border-white/60'
           >
             <Star className='w-8 h-8 text-white' />
             <span className='relative z-10 drop-shadow-lg mb-4 sm:mb-4'>
