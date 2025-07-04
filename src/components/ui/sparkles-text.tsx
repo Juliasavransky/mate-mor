@@ -105,7 +105,7 @@ const SparklesText: React.FC<SparklesTextProps> = ({
   }, [colors.first, colors.second]);
 
   return (
-    <div
+    <div dir="rtl"
       className={cn("text-7xl text-balance text-center md:text-right", className)}
       {...props}
       style={

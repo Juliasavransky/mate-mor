@@ -58,7 +58,10 @@ export default function SocialSection() {
             </span>
           </h2>
           <p className='text-2xl text-neutral-600 max-w-3xl mx-auto'>
-            הצטרפי לקהילה שלנו לתכנים מעוררי השראה ועדכונים על אירועים עתידיים
+            הצטרפי לקהילה שלי
+          </p>
+          <p className='text-2xl text-neutral-600 max-w-3xl mx-auto'>
+            לתכנים מעוררי השראה ועדכונים על אירועים עתידיים
           </p>
         </motion.div>
 

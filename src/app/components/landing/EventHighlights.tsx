@@ -54,7 +54,7 @@ export default function EventHighlights() {
             </span>
           </h2>
           <p className='text-2xl text-neutral-600 max-w-3xl mx-auto'>
-            ערב מלא באור, במשמעות ובהפתעות שיעשו את הלב שמח
+            ערב מלא באור, משמעות והפתעות שיעשו את הלב שמח
           </p>
         </motion.div>
 
@@ -108,7 +108,7 @@ export default function EventHighlights() {
                 <div className='space-y-2'>
                   <Star className='w-8 h-8 mx-auto' />
                   <h4 className='text-2xl font-bold'>אירוע חד פעמי</h4>
-                  <p className='text-[#F5E8CD]'>שלא יחזור שוב</p>
+                  <p className='text-[#F5E8CD]'> שלא כדאי לפספס </p>
                 </div>
                 <div className='space-y-2'>
                   <Heart className='w-8 h-8 mx-auto' />

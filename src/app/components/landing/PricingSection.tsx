@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Timer, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LayeredBackground from '../landing/LayeredBackground';
+import { MovingBorder } from '@/components/ui/moving-border';
 
 type PricingSectionProps = {
   timeLeft: {
@@ -44,7 +45,7 @@ export default function PricingSection({
               השפעה גדולה
             </span>
           </h2>
-          <p className='text-2xl text-neutral-600 max-w-3xl mx-auto ml-3 mr-3'>
+          <p className='text-2xl text-neutral-600 max-w-3xl mx-auto ml-7 mr-7'>
             ערב שישנה את נקודת המבט שלך על החיים במחיר מיוחד לנרשמות מוקדם
           </p>
         </motion.div>
@@ -71,7 +72,15 @@ export default function PricingSection({
                     {' '}
                     עלות בהרשמה מוקדמת
                   </h3>
-                  <Badge className='bg-[#F5D9A5] text-[#664c43] border-none py-2'>
+                  <Badge
+                    className='text-xl text-white mt-4 px-12 py-6  border-none'
+                    style={{
+                     
+                      borderRadius: '70% 0%',
+                      backgroundImage:
+                        'linear-gradient(to bottom left, #F5D9A5, #664c43)',
+                    }}
+                  >
                     עד 21 ביולי 2025
                   </Badge>
                 </div>
