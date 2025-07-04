@@ -45,10 +45,11 @@ export default function PricingSection({
             </span>
           </h2>
           <p className='text-2xl text-neutral-600 max-w-3xl mx-auto ml-7 mr-7'>
-            ערב שישנה את נקודת המבט שלך על החיים במחיר מיוחד לנרשמות מוקדם
+            ערב שישנה את נקודת המבט שלך על החיים
           </p>
+          <p className='text-2xl text-neutral-600 max-w-3xl mx-auto ml-7 mr-7'>במחיר מיוחד לנרשמות מוקדם</p>
         </motion.div>
-
+        מחיר מיוחד לנרשמות מוקדם
         <div className='grid lg:grid-cols-2 lg:[direction:rtl] gap-8 max-w-4xl mx-auto'>
           {/* Early Bird Pricing */}
           <motion.div
@@ -74,7 +75,6 @@ export default function PricingSection({
                   <Badge
                     className='text-xl text-white mt-4 px-12 py-6  border-none'
                     style={{
-                     
                       borderRadius: '70% 0%',
                       backgroundImage:
                         'linear-gradient(to bottom left, #F5D9A5, #664c43)',
@@ -195,7 +195,6 @@ export default function PricingSection({
             </Card>
           </motion.div>
         </div>
-
         {/* Urgency Message */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

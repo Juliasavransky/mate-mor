@@ -316,20 +316,32 @@ export default function TestimonialsCarousel() {
         </div>
       </div>
 
-      <div
-  className="w-full h-[600px] relative  overflow-hidden"
-  style={{
-    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',
-    maskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',
-  }}
->
-  <img
+
+
+          {/* תמונה לדסקטופ בלבד */}
+<div 
+className="hidden lg:block w-full h-[500px] relative overflow-hidden">
+<img
+style={{ WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',
+    maskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',}}
     src="/images/matiPart.jpg"
-    alt="..."
-    className="w-full h-full object-cover object-[center]"
+    alt="תמונה למחשב"
+    className="w-full h-full object-cover object-center"
   />
 </div>
 
-    </>
+{/* תמונה למובייל בלבד */}
+<div className="block lg:hidden w-full h-[440px] relative overflow-hidden">
+  <div
+  style={{
+    backgroundImage: "url('/images/MatiW.jpg')",
+    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',
+    maskImage: 'linear-gradient(to bottom, transparent 0%, #664c43 20%, #664c43 80%, transparent 100%)',}}
+    className="absolute inset-0 bg-cover bg-center"
+  />
+</div>
+
+
+  </>
   );
 }
