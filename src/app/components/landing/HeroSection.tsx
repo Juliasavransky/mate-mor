@@ -21,17 +21,6 @@ const highlights = [
   'תובנות נומרולוגיות',
 ];
 
-function RotatingStar({ direction }: { direction: 'left' | 'right' }) {
-  return (
-    <motion.div
-      animate={{ rotate: direction === 'left' ? 360 : -360 }}
-      transition={{ duration: direction === 'left' ? 1.5 : 0.8 }}
-    >
-      <Star className='w-10 h-10 text-white drop-shadow-md relative z-10' />
-    </motion.div>
-  );
-}
-
 export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
@@ -74,15 +63,19 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className='flex flex-col md:flex-row items-center justify-between gap-8 mt-1 lg:mt-2'
+            className='w-full flex justify-center md:justify-end'
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-              className='text-right flex flex-col gap-4 md:mt-6'
+              className='text-center md:text-right'
             >
-              <SparklesText text='מופע חד פעמי -   מסע חיי עם מתי מור ' />
+              <SparklesText
+                text='"מזל שיש אותך"
+מופע מסע חיי
+עם מתי מור '
+              />
             </motion.div>
           </motion.div>
 
@@ -123,30 +116,48 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance p-3 rounded-2xl'
+                className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance  rounded-2xl'
               >
-                חודש הסליחות, עשרת ימי תשובה, הצטרפי אליי לערב נשי מיוחד, עוצמתי
-                ומעורר השראה שיחבר אותך לעצמך דרכי
+                חודש הסליחות, עשרת ימי תשובה
               </motion.p>
 
-             <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.8 }}
-  className='flex flex-col sm:flex-row items-center sm:justify-start gap-4 sm:gap-8 bg-white/30 rounded-2xl sm:bg-transparent sm:rounded-none'
->
-  {highlights.map((label, index) => (
-    <motion.div
-      key={index}
-      className='p-8 rounded-xl hover:bg-white/60 active:bg-white/60 focus:bg-white/60 transition-all duration-300'
-      whileHover={{ scale: 1.1, y: -2 }}
-      whileTap={{ scale: 1.1, y: -2 }}
-    >
-      <p className='text-neutral-700 text-xl text-center font-medium'>{label}</p>
-    </motion.div>
-  ))}
-</motion.div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance  rounded-2xl'
+              >
+                הצטרפי אליי לערב עוצמתי מיוחד ומעורר השראה
+              </motion.p>
 
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance  rounded-2xl'
+              >
+                שיחבר אותך לקול הפנימי ולעצמך - דרכי
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className='flex flex-col sm:flex-row items-center sm:justify-start gap-4 sm:gap-8 bg-white/30 rounded-2xl sm:bg-transparent sm:rounded-none'
+              >
+                {highlights.map((label, index) => (
+                  <motion.div
+                    key={index}
+                    className='p-8 rounded-xl hover:bg-white/60 active:bg-white/60 focus:bg-white/60 transition-all duration-300'
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 1.1, y: -2 }}
+                  >
+                    <p className='text-neutral-700 text-xl text-center font-medium'>
+                      {label}
+                    </p>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
 
             {/* תמונה של מתי במסך גדול */}
@@ -156,7 +167,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
               transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
               className='hidden lg:block flex-1 relative min-h-[500px] rounded-2xl overflow-hidden group'
               whileHover={{ scale: 1.02 }}
-              whileTap={{scale:1.02}}
+              whileTap={{ scale: 1.02 }}
             >
               <div className='absolute inset-0 bg-gradient-to from-[#664c43]/50 to-transparent z-10'></div>
               <div
@@ -183,13 +194,13 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             style={rainbowButtonStyle}
             className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 mb-10 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl focus:scale-105 focus:shadow-4xl active:scale-105 active:shadow-4xl pulse-glow border-2 border-white/30'
           >
-            <RotatingStar direction='left' />
-            <span className='relative z-10 drop-shadow-lg mb-5 sm:mb-4'>
+            <Star className='w-8 h-8 text-white' />
+            <span className='relative z-10 drop-shadow-lg mb-4 sm:mb-4'>
               {' '}
               <span className='block sm:hidden'>שרייני מקום</span>
               <span className='hidden sm:block'>שמרי את מקומך עכשיו</span>
             </span>
-            <RotatingStar direction='right' />
+            <Star className='w-8 h-8 text-white' />
           </motion.button>
         </div>
       </section>

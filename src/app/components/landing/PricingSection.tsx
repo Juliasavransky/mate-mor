@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { Timer, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import LayeredBackground from '../landing/LayeredBackground';
-import { MovingBorder } from '@/components/ui/moving-border';
 
 type PricingSectionProps = {
   timeLeft: {
