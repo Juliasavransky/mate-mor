@@ -192,7 +192,13 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
             onMouseEnter={() => setIsButtonHovered(true)}
             onMouseLeave={() => setIsButtonHovered(false)}
             style={rainbowButtonStyle}
-            className='relative w-full max-w-[820px] mx-auto flex items-center justify-center gap-8 mb-10 rounded-full px-20 py-4 text-3xl font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-4xl focus:scale-105 focus:shadow-4xl active:scale-105 active:shadow-4xl pulse-glow border-2 border-white/30'
+            className='relative w-full max-w-[820px] 
+            mx-auto flex items-center justify-center gap-8 mb-10 
+            rounded-full px-20 py-4 text-3xl font-bold text-white
+             overflow-hidden transition-all duration-500 
+             ease-out hover:scale-105 hover:shadow-4xl 
+             focus:scale-105 focus:shadow-4xl active:scale-105
+              active:shadow-4xl pulse-glow border-2 border-white/30'
           >
             <Star className='w-8 h-8 text-white' />
             <span className='relative z-10 drop-shadow-lg mb-4 sm:mb-4'>

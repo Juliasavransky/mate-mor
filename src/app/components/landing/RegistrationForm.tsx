@@ -123,10 +123,15 @@ export default function RegistrationForm() {
         >
           <h2 className='text-2xl md:text-3xl font-bold text-[#3b3b3b] mb-6'>
             <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent leading-12'>
-              לא סתם הגעת עד לכאן - הגיע הזמן לבחור בך
-              <div className='text-[#664c43]'>"כשמספרי החיים פגשו את הלב-</div>
-              <div className='text-[#664c43]'>נולד מופע שהוא מתנה לעצמך"</div>
-              מחכה ומצפה לראותך ולתת לך חיבוק אישי חם ואוהב
+              לא סתם הגעת עד לכאן-
+              <div dir='rtl' className='text-[#664c43] text-2xl my-1 mx-3 md:text-3xl'>
+                {' '}
+                הגיע הזמן לבחור בך
+              </div>
+              <div className='text-[#664c43] text-2xl my-1 mx-3 md:text-3xl'>"כשמספרי החיים פגשו את הלב-</div>
+              <div className='text-[#664c43] text-2xl my-1 mx-3 md:text-3xl'>נולד מופע שהוא מתנה לעצמך"</div>
+              <div className='text-[#664c43] text-2xl my-1 mx-3 md:text-3xl'>מחכה ומצפה לראותך</div>
+              ולתת לך חיבוק אישי חם ואוהב
             </span>
           </h2>
         </motion.div>

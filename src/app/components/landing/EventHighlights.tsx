@@ -46,7 +46,10 @@ export default function EventHighlights() {
           transition={{ duration: 0.8 }}
           className='text-center mb-16'
         >
-          <h2 dir="rtl"className='text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6'>
+          <h2
+            dir='rtl'
+            className='text-4xl md:text-5xl font-bold text-[#3b3b3b] mb-6'
+          >
             מה מחכה לך
             <span className='bg-gradient-to-r from-[#CAAB73] to-[#664c43] bg-clip-text text-transparent'>
               {' '}
@@ -66,22 +69,27 @@ export default function EventHighlights() {
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration:1.7, delay: index * 0.1 }}
+                transition={{ duration: 1.7, delay: index * 0.1 }}
               >
-                <Card className='border-none shadow-xl hover:shadow-2xl focus:shadow-2xl active:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-2 bg-[#F5E8CD]/30 h-full'>
+                <Card
+                  className='border-none shadow-xl hover:shadow-2xl focus:shadow-2xl active:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 focus:-translate-y-2 active:-translate-y-2 
+bg-gradient-to-br from-[#664c43]/90 to-[#C8A85C]/90
+ backdrop-blur-lg 
+ h-full  rounded-3xl  shadow-2xl   '
+                >
                   <CardContent className='p-6 lg:p-8 text-center lg:text-right space-y-4 lg:space-y-0 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-6 lg:justify-items-end'>
                     {/* תוכן – כותרת מודגשת ואחריה תיאור */}
                     <div className='lg:flex lg:flex-row-reverse lg:items-center lg:gap-4 text-center lg:text-right'>
-                      <h3 className='text-2xl font-bold text-[#3b3b3b] mb-2 lg:mb-0'>
+                      <h3 className='text-2xl font-bold text-white mb-2 lg:mb-0'>
                         {highlight.title}
                       </h3>
-                      <p className='text-neutral-600 leading-relaxed'>
+                      <p className='text-white text-2xl leading-relaxed'>
                         {highlight.description}
                       </p>
                     </div>
                     {/* אייקון – עובר לצד שמאל במסכים גדולים */}
-                    <div className='w-16 h-16 mx-auto  lg:mr-[12rem] lg:ml-[4rem] rounded-full bg-[#664c43] flex items-center justify-center mb-4 lg:mb-0 lg:row-span-1'>
-                      <IconComponent className='w-8 h-8 text-white' />
+                    <div className='w-16 h-16 mx-auto  lg:mr-[12rem] lg:ml-[4rem] rounded-full bg-[#f5e8cd] flex items-center justify-center mb-4 lg:mb-0 lg:row-span-1'>
+                      <IconComponent className='w-8 h-8 text-[#664c43]' />
                     </div>
                   </CardContent>
                 </Card>
