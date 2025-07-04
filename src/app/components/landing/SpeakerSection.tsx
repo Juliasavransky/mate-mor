@@ -35,8 +35,7 @@ export default function SpeakerSection() {
                   <div
                     className='absolute inset-0 bg-cover bg-[60%_20%]'
                     style={{
-                      backgroundImage: `
-      url('/images/MatiHero.jpg')`,
+                      backgroundImage: `url('/images/MatiHero.jpg')`,
                       backgroundBlendMode: 'overlay',
                     }}
                   ></div>
