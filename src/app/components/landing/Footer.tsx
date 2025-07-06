@@ -94,11 +94,11 @@ const Footer = () => {
       target="_blank"
       rel="noopener noreferrer"
       className="text-white underline hover:text-blue-600 transition"
-      tooltip= 'התקשרו אלי'
     >
       © 2025 Web-Witch עיצוב ופיתוח - יוליה סברנסקי פרל
     </a>
   ),
+  tooltip: 'התקשרו אלי',
   license: 'כל הזכויות שמורות למתי מור',
 }}
 
