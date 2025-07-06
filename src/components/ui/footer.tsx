@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '@/components/ui/button';
 // If you use Radix UI, use the following import:
 
@@ -21,7 +22,8 @@ interface UiFooterProps {
     label: string;
   }>;
   copyright: {
-    text: string;
+    text: string | React.ReactNode;
+    tooltip: string;
     license?: string;
   };
 }
@@ -102,8 +104,14 @@ transition-all duration-300 ${link.bgColor} ${link.hoverColor || ''}`}
             </ul>
           </div>
 
-          <div dir="rtl" className='mt-6 pr-22 text-base leading-6 text-white whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]'>
+          <div
+            dir='rtl'
+            className='mt-6 pr-22 text-base leading-6 text-white whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]'
+          > 
             <div>{copyright.text}</div>
+          <div className='absolute bottom-full mb-2 px-3 py-1 text-sm text-white bg-black/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap left-1/2 -translate-x-1/2'>
+              {copyright.tooltip}
+            </div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>
         </div>

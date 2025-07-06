@@ -87,10 +87,21 @@ const Footer = () => {
           { href: '/privacy', label: '' },
           { href: '/terms', label: '' },
         ]}
-        copyright={{
-          text: '© 2025 web-witch עיצוב ופיתוח- יוליה סברנסקי פרל ',
-          license: 'כל הזכויות שמורות למתי מור',
-        }}
+     copyright={{
+  text: (
+    <a
+      href="https://www.webwitch.click/he/home"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-white underline hover:text-blue-600 transition"
+      tooltip= 'התקשרו אלי'
+    >
+      © 2025 Web-Witch עיצוב ופיתוח - יוליה סברנסקי פרל
+    </a>
+  ),
+  license: 'כל הזכויות שמורות למתי מור',
+}}
+
       />
     </div>
   );
