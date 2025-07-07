@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Analytics } from '@vercel/analytics/next';
+
 import './globals.css';
 
 const geistSans = GeistSans;
@@ -35,6 +37,7 @@ export default function RootLayout({
           }}
         ></script>
         {children}
+        <Analytics />
       </body>
     </html>
   );
