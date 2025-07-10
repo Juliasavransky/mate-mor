@@ -236,7 +236,9 @@ export default function RegistrationForm() {
                     </p>
                   )}
                 </div>
+<p className='font-bold text-center pt-3 pb-3'>*שימו ❤️ כרגע לא ניתן לשלם  עם אמריקן אקספרס או דיינרס. תודה על ההבנה 🫶
 
+</p>
                 {/* Submit Button */}
                 <div className='w-full flex flex-col md:flex-row gap-4'>
                   <Button
