@@ -113,26 +113,32 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  html[dir="rtl"] {
-    direction: rtl; /* עבור הטקסטים */
+  html {
+    @apply bg-background; /* משתמש בערך של --background = לבן לפי ההגדרה שלך */
+    min-height: 100%;       /* שומר על פריסה יציבה */
   }
 
   body {
-    direction: ltr; /* שמור על סדר layout טבעי */
-    @apply bg-background text-foreground;
+    direction: ltr; /* או rtl בהתאם לשפה */
+    @apply bg-background text-foreground min-h-screen overflow-x-hidden;
+
+    /* מניעת "הבזקי רקע" בזמן טעינה */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
   }
 
   .text-rtl {
     direction: rtl;
-    unicode-bidi: plaintext; /* מונע הפיכת מספרים ומבנה */
+    unicode-bidi: plaintext;
   }
 
   .text-ltr {
     direction: ltr;
   }
 }
+
 

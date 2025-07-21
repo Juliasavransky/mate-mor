@@ -49,7 +49,7 @@ const earlyBirdDeadline = new Date('2025-07-22T23:59:59');
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-rose-50 via-purple-50 to-pink-50'>
+    <div className='min-h-screen bg-white '>
       <section id='about'>
         {/* Hero Section */}
         <HeroSection onRegisterClick={scrollToRegistration} />
