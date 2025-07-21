@@ -119,7 +119,7 @@ export default function HeroSection({ onRegisterClick }: HeroSectionProps) {
                 transition={{ duration: 1, delay: 0.6 }}
                 className='text-2xl md:text-3xl text-neutral-900 leading-relaxed font-light text-balance  rounded-2xl'
               >
-                חודש הסליחות, עשרת ימי תשובה
+                חודש הסליחות  
               </motion.p>
 
               <motion.p

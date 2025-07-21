@@ -80,7 +80,7 @@ export default function PricingSection({
                         'linear-gradient(to bottom left, #F5D9A5, #664c43)',
                     }}
                   >
-                    עד 21 ביולי 2025
+                    עד 30 ביולי 2025
                   </Badge>
                 </div>
 
@@ -166,7 +166,7 @@ export default function PricingSection({
                     variant='outline'
                     className='border-[#664c43] text-neutral-600'
                   >
-                    מ-22 ביולי 2025
+                    מ-1 באוגוסט 2025
                   </Badge>
                 </div>
 
@@ -182,7 +182,7 @@ export default function PricingSection({
                   className='w-full border-neutral-300 text-neutral-700 py-4 text-lg rounded-xl hover:bg-neutral-50  focus:bg-neutral-50 active:bg-neutral-50 transition-all duration-300'
                   disabled
                 >
-                  יהיה זמין אחרי ה- 21 ביולי 2025
+                  יהיה זמין אחרי ה- 30 ביולי 2025
                 </Button>
 
                 <div className='text-sm text-neutral-400 space-y-1'>
